@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- 生成画像プレビューページ -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character Sheet Maker | てぃーラボ</title>
+    <meta
+      name="description"
+      content="Tのプログラミングお試し場です。ここではクトゥルフ神話TRPGのキャラクターシートを作成できます。"
+    />
+    <!-- タブ上のアイコン表示 -->
+    <link rel="icon" href="images/dot.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/html5reset-1.6.1.css" />
+    <link rel="stylesheet" href="styles/CSstyle.css" />
+  </head>
+  <body onload="loadImage('canvas-container','preview');">
+    <!-- nav start -->
+    <div id="nav-container">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
+        aria-label="Fifth navbar example"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">クトゥルフ神話TRPG キャラシ作成</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample05"
+            aria-controls="navbarsExample05"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="#">ホーム</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="https://twitter.com/tk37a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Twitter</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Coming soon...</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="dropdown05"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >つくったもの</a
+                >
+                <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                  <li>
+                    <a class="dropdown-item" href="CharaSheet.html"
+                      >クトゥルフTRPG キャラシ作成</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Coming soon...</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Coming soon...</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form></form>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- nav finish -->
+
+    <div id="main-container">
+      <!-- text input -->
+
+      <!-- img preview -->
+      <div id="canvas-container">
+        <canvas id="preview"></canvas>
+      </div>
+      <p id="input-box">
+        <input type="text" id="canvas_text" value="いあいあ！" />
+        <button onclick="drawText('preview','canvas_text');">
+          文字を描く！
+        </button>
+      </p>
+    </div>
+    <!-- script load -->
+    <script src="scripts/CSmain.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

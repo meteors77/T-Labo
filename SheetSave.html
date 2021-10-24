@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- 原寸大画像の描画ページ -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save | てぃーラボ</title>
+    <!-- タブ上のアイコン表示 -->
+    <link rel="icon" href="images/dot.png" />
+    <link rel="stylesheet" href="styles/html5reset-1.6.1.css" />
+  </head>
+  <body onload="loadImage('preview','canvas_text');">
+    <!-- 入力されたデータ -->
+    <data id="canvas_text" value="いあいあ！"></data>
+
+    <div id="main-container">
+      <div id="canvas-container">
+        <canvas id="preview"></canvas>
+      </div>
+    </div>
+
+    <!-- script load -->
+    <script src="scripts/SSaveMain.js"></script>
+  </body>
+</html>

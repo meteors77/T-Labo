@@ -1,0 +1,28 @@
+body {
+  background-color: whitesmoke;
+}
+
+#main-container {
+  text-align: center;
+  margin: 50px 10%;
+}
+
+#input-box {
+  margin: 20px auto;
+}
+
+#canvas-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-top: 100%;
+}
+
+#preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=CSstyle.css.map */
