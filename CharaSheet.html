@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
   <!-- 生成画像プレビューページ -->
-  <head>
+  <head
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/article#"
+  >
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
@@ -11,8 +13,9 @@
     <title>Character Sheet Maker | てぃーラボ</title>
     <meta
       name="description"
-      content="第6版クトゥルフ神話TRPGのキャラクターシートをつくれます"
+      content="クトゥルフ神話TRPGのキャラクターシートをつくれます。"
     />
+    <meta property="og:image" content="images/ryu.png" />
     <!-- タブ上のアイコン表示 -->
     <link rel="icon" href="images/ryu.png" />
     <!-- font link -->
@@ -30,6 +33,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles/html5reset-1.6.1.css" />
+    <link rel="stylesheet" href="styles/MainStyle.css" />
     <link rel="stylesheet" href="styles/CSstyle.css" />
   </head>
 
@@ -60,10 +64,13 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarsExample05"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item active">
-                <a class="nav-link disabled" aria-current="page" href="#"
+                <a class="nav-link" aria-current="page" href="index.html"
                   >ホーム</a
                 >
               </li>
@@ -94,7 +101,10 @@
                   aria-expanded="false"
                   >つくったもの</a
                 >
-                <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="dropdown05"
+                >
                   <li>
                     <a class="dropdown-item active" href="#"
                       >クトゥルフTRPG キャラシ作成</a
@@ -139,8 +149,8 @@
           ><span>キャラシが下に生成されます。</span>
         </p>
         <p class="text-center">
-          <span>○ 画面サイズによって画質が変わります。</span
-          ><span>PCでの使用を推奨します。</span>
+          <span>○ 「だうんろーど！」で保存できます。</span
+          ><span>4500x4500です(でかい)</span>
         </p>
         <p class="text-center">
           <span>○ フォントやらがおかしいときは</span
@@ -170,8 +180,7 @@
                 type="file"
                 accept="image/png,image/jpeg"
                 id="PCimage"
-                onchange="OutputImage(this,'preview','PCsample')"
-                ;
+                onchange="OutputImage(this,'canvas-container','PCsample');"
               />
             </label>
           </div>
@@ -2479,33 +2488,11 @@
           </div>
 
           <div class="btn-make">
-            <button
-              class="btn btn-outline-dark"
-              onclick="drawText
-              ('ColorInput',
-              'PCsample',
-              'preview',
-              'Last-name',
-              'First-name',
-              'Last-read',
-              'First-read',
-              'inputSelectSex',
-              'inputSelectYear',
-              'inputSelectMonth',
-              'inputSelectDay',
-              'height',
-              'PL-name',
-              'other-data',
-              'inputSelectSTR',
-              'inputSelectCON',
-              'inputSelectPOW',
-              'inputSelectDEX',
-              'inputSelectAPP',
-              'inputSelectSIZ',
-              'inputSelectINT',
-              'inputSelectEDU');"
-            >
-              生成！
+            <button class="btn btn-outline-dark" onclick="drawText('preview');">
+              生成！</button
+            >　
+            <button class="btn btn-outline-dark" id="download">
+              だうんろーど！
             </button>
           </div>
         </div>
@@ -2518,6 +2505,18 @@
         </canvas>
       </div>
     </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-contents">
+        <img src="/images/ryu.png" class="footer-icon" />
+        <span style="font-weight: bold">. . .　　</span>
+        <small class="footer-text"
+          >&copy;2021 <a href="https://twitter.com/tk37e">@tk37e</a></small
+        >
+      </div>
+    </footer>
+
     <!-- script load -->
     <script src="scripts/CSinput.js"></script>
     <script src="scripts/CSmain.js"></script>

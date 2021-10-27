@@ -1,0 +1,51 @@
+.title {
+  //   padding-left: 30px;
+  //   background: url(../images/ryu.png) no-repeat;
+  margin: 5rem auto 3rem;
+}
+
+.contents {
+  width: 80%;
+  margin: 5rem auto;
+  user-select: none;
+  & .content-text {
+    margin-bottom: 1rem;
+    line-height: 1.3;
+
+    & .disabled {
+      display: none;
+    }
+  }
+  & .content-link {
+    margin: 2rem auto;
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.4rem;
+    &.disabled {
+      background-color: #eaeaea;
+    }
+  }
+  & img.thumbnail {
+    max-width: 30%;
+    height: auto;
+    border-radius: 3%;
+    margin: 8px;
+    object-fit: contain;
+  }
+  & .stretched-link::after {
+    background: rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    border-radius: 0.4rem;
+    transition: all 0.5s ease;
+  }
+  & .stretched-link:hover::after {
+    opacity: 1;
+  }
+  & .dummy-link {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+  }
+}
