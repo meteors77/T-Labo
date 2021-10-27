@@ -1,16 +1,71 @@
+$MarginInput: 10px;
+$MarginOutline: 30px;
+
 body {
   background-color: whitesmoke;
 }
 
+// navタイトル レスポンシブ対応
+.md-nav {
+  display: none;
+}
+
 #main-container {
+  // 子インライン要素を中央揃えに
   text-align: center;
+  // 横マージンを10%
   margin: 50px 10%;
 }
 
-#input-box {
-  margin: 20px auto;
+// フォーム部分余白調整
+.input-box {
+  margin: $MarginOutline 5px;
+  & .input-group {
+    margin: $MarginInput 5px;
+  }
 }
 
+// ボタン上余白調整
+.btn-make {
+  margin-top: $MarginOutline;
+}
+
+.form-control {
+  // ファイル選択下の余白削除
+  line-height: 1.7;
+}
+
+// ファイル選択デザイン調整
+.file-label {
+  & > input {
+    display: none;
+  }
+  display: inline-block;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+  background-color: #fff;
+  background-clip: padding-box;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #f3f5f7;
+  }
+}
+
+// 選択画像preview部分
+#sample {
+  margin: 10px auto !important;
+}
+
+// ステータスラベル名調整
+.status-label {
+  justify-content: center;
+  padding: 6px 0px;
+  width: 50px;
+}
+
+// canvasをレスポンシブに
 #canvas-container {
   // 素材の画像と同じアスペクト比の要素を用意し、そのサイズをcanvasの属性値として設定
   position: relative;
@@ -26,4 +81,35 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .sm-nav {
+    display: none;
+  }
+
+  .md-nav {
+    display: inline;
+  }
+
+  #inputSelectSex {
+    width: 20%;
+    min-width: 80%;
+  }
+  .form-sex {
+    margin-bottom: $MarginInput;
+  }
+  // status レスポンシブ統一
+  .form-status {
+    width: 30% !important;
+    min-width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  #inputSelectSex {
+    width: 10%;
+    min-width: 50%;
+  }
 }

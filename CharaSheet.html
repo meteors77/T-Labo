@@ -4,14 +4,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1, user-scalable=yes"
+    />
     <title>Character Sheet Maker | てぃーラボ</title>
     <meta
       name="description"
       content="Tのプログラミングお試し場です。ここではクトゥルフ神話TRPGのキャラクターシートを作成できます。"
     />
     <!-- タブ上のアイコン表示 -->
-    <link rel="icon" href="images/dot.png" />
+    <link rel="icon" href="images/ryu.png" />
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Otomanopee+One&family=RocknRoll+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,6 +32,7 @@
     <link rel="stylesheet" href="styles/html5reset-1.6.1.css" />
     <link rel="stylesheet" href="styles/CSstyle.css" />
   </head>
+
   <body onload="loadImage('canvas-container','preview');">
     <!-- nav start -->
     <div id="nav-container">
@@ -29,7 +41,13 @@
         aria-label="Fifth navbar example"
       >
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">クトゥルフ神話TRPG キャラシ作成</a>
+          <a class="navbar-brand tool-title" href="#"
+            ><span class="sm-nav">6版</span
+            ><span class="md-nav">旧</span>クトゥルフ<span class="sm-nav"
+              >神話TRPG</span
+            >
+            キャラシ作成</a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -50,7 +68,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link"
-                  href="https://twitter.com/tk37a"
+                  href="https://twitter.com/tk37e"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Twitter</a
@@ -98,19 +116,369 @@
 
     <div id="main-container">
       <!-- text input -->
+      <p>データを入力してください</p>
+
+      <div class="form-group row">
+        <div class="input-box">
+          <!-- color & PCimage -->
+          <div class="input-group">
+            <span class="input-group-text">文字色</span>
+            <input
+              type="color"
+              class="form-control form-control-color"
+              id="ColorInput"
+              value="#563d7c"
+              title="Choose your color"
+            />
+            <label for="PCimage" class="input-group-text file-label"
+              >PC画像を選択
+              <input
+                type="file"
+                accept=".png,.jpeg"
+                id="PCimage"
+                onchange="OutputImage(this,'preview')"
+                ;
+              />
+            </label>
+          </div>
+          <div id="sample"></div>
+
+          <!-- PCname -->
+          <div class="input-group">
+            <span class="input-group-text">なまえ</span>
+            <input
+              type="text"
+              id="Last-name"
+              placeholder="名字"
+              class="form-control"
+              value="名字"
+            />
+            <input
+              type="text"
+              id="Last-read"
+              placeholder="みょうじ"
+              class="form-control"
+              value="みょうじ"
+            />
+            <input
+              type="text"
+              id="First-name"
+              placeholder="名前"
+              class="form-control"
+              value="名前"
+            />
+            <input
+              type="text"
+              id="First-read"
+              placeholder="なまえ"
+              class="form-control"
+              value="なまえ"
+            />
+          </div>
+
+          <!-- sex & birth -->
+          <div class="input-group">
+            <label class="input-group-text form-sex" for="inputSelectSex"
+              >性別</label
+            >
+            <select class="form-select form-sex" id="inputSelectSex">
+              <option value=""></option>
+              <option selected value="男">男</option>
+              <option value="女">女</option>
+              <option value="??">??</option>
+            </select>
+            <label class="input-group-text" for="birth-select">生年月日</label>
+            <select
+              class="form-select birth-select birthday-year"
+              id="inputSelectYear"
+            >
+              <!-- 1930-2050まで -->
+            </select>
+            <select
+              class="form-select birth-select birthday-month"
+              id="inputSelectMonth"
+            >
+              <!-- 1930-2050まで -->
+            </select>
+            <select
+              class="form-select birth-select birthday-day"
+              id="inputSelectDay"
+            >
+              <!-- 1930-2050まで -->
+            </select>
+          </div>
+
+          <!-- height & PLname -->
+          <div class="input-group">
+            <span class="input-group-text">身長</span>
+            <!-- 半角数字以外の入力を受け付けない -->
+            <input
+              type="text"
+              id="height"
+              placeholder="170"
+              class="form-control"
+              value="170"
+              oninput="value = value.replace(/[０-９]/g,s => String.fromCharCode(s.charCodeAt(0) - 65248)).replace(/\D/g,'');"
+            />
+            <span class="input-group-text">PL名</span>
+            <input
+              type="text"
+              id="PL-name"
+              placeholder="いあ"
+              class="form-control"
+              value="いあ"
+            />
+          </div>
+
+          <!-- other data -->
+          <div class="input-group">
+            <span class="input-group-text">そのほか</span>
+            <textarea
+              class="form-control"
+              aria-label="With textarea"
+              id="other-data"
+              placeholder="なんでもご自由に！"
+            >
+なんでもご自由に！
+どうぞ！
+</textarea
+            >
+          </div>
+
+          <!-- STR CON POW DEX -->
+          <div class="input-group">
+            <label class="input-group-text status-label" for="inputSelectSTR"
+              >STR</label
+            >
+            <select class="form-select form-status" id="inputSelectSTR">
+              <option value=""></option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option selected value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+            </select>
+
+            <label class="input-group-text status-label" for="inputSelectCON"
+              >CON</label
+            >
+            <select class="form-select form-status" id="inputSelectCON">
+              <option value=""></option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option selected value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+            </select>
+
+            <label class="input-group-text status-label" for="inputSelectPOW"
+              >POW</label
+            >
+            <select class="form-select form-status" id="inputSelectPOW">
+              <option value=""></option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option selected value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+            </select>
+
+            <label class="input-group-text status-label" for="inputSelectDEX"
+              >DEX</label
+            >
+            <select class="form-select form-status" id="inputSelectDEX">
+              <option value=""></option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option selected value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+            </select>
+          </div>
+
+          <!-- APP SIZ INT EDU -->
+          <div class="input-group">
+            <label class="input-group-text status-label" for="inputSelectAPP"
+              >APP</label
+            >
+            <select class="form-select form-status" id="inputSelectAPP">
+              <option value=""></option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option selected value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+            </select>
+
+            <label class="input-group-text status-label" for="inputSelectSIZ"
+              >SIZ</label
+            >
+            <select class="form-select form-status" id="inputSelectSIZ">
+              <option value=""></option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option selected value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+            </select>
+
+            <label class="input-group-text status-label" for="inputSelectINT"
+              >INT</label
+            >
+            <select class="form-select form-status" id="inputSelectINT">
+              <option value=""></option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option selected value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+            </select>
+
+            <label class="input-group-text status-label" for="inputSelectEDU"
+              >EDU</label
+            >
+            <select class="form-select form-status" id="inputSelectEDU">
+              <option value=""></option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option selected value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+            </select>
+          </div>
+
+          <div class="btn-make">
+            <button
+              class="btn btn-outline-dark"
+              onclick="drawText
+              ('ColorInput',
+              'PCimage',
+              'preview',
+              'Last-name',
+              'First-name',
+              'Last-read',
+              'First-read',
+              'inputSelectSex',
+              'inputSelectYear',
+              'inputSelectMonth',
+              'inputSelectDay',
+              'height',
+              'PL-name',
+              'other-data',
+              'inputSelectSTR',
+              'inputSelectCON',
+              'inputSelectPOW',
+              'inputSelectDEX',
+              'inputSelectAPP',
+              'inputSelectSIZ',
+              'inputSelectINT',
+              'inputSelectEDU');"
+            >
+              生成！
+            </button>
+          </div>
+        </div>
+      </div>
 
       <!-- img preview -->
       <div id="canvas-container">
-        <canvas id="preview"></canvas>
+        <canvas id="preview">
+          画像を表示するには、canvasタグをサポートしたブラウザが必要です。
+        </canvas>
       </div>
-      <p id="input-box">
-        <input type="text" id="canvas_text" value="いあいあ！" />
-        <button onclick="drawText('preview','canvas_text');">
-          文字を描く！
-        </button>
-      </p>
     </div>
     <!-- script load -->
+    <script src="scripts/CSinput.js"></script>
     <script src="scripts/CSmain.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

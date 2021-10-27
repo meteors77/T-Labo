@@ -1,5 +1,10 @@
+@charset "UTF-8";
 body {
   background-color: whitesmoke;
+}
+
+.md-nav {
+  display: none;
 }
 
 #main-container {
@@ -7,8 +12,52 @@ body {
   margin: 50px 10%;
 }
 
-#input-box {
-  margin: 20px auto;
+.input-box {
+  margin: 30px 5px;
+}
+
+.input-box .input-group {
+  margin: 10px 5px;
+}
+
+.btn-make {
+  margin-top: 30px;
+}
+
+.form-control {
+  line-height: 1.7;
+}
+
+.file-label {
+  display: inline-block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+  background-color: #fff;
+  background-clip: padding-box;
+}
+
+.file-label > input {
+  display: none;
+}
+
+.file-label:hover {
+  cursor: pointer;
+  background-color: #f3f5f7;
+}
+
+#sample {
+  margin: 10px auto !important;
+}
+
+.status-label {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 6px 0px;
+  width: 50px;
 }
 
 #canvas-container {
@@ -24,5 +73,33 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .sm-nav {
+    display: none;
+  }
+  .md-nav {
+    display: inline;
+  }
+  #inputSelectSex {
+    width: 20%;
+    min-width: 80%;
+  }
+  .form-sex {
+    margin-bottom: 10px;
+  }
+  .form-status {
+    width: 30% !important;
+    min-width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  #inputSelectSex {
+    width: 10%;
+    min-width: 50%;
+  }
 }
 /*# sourceMappingURL=CSstyle.css.map */
