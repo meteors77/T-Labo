@@ -5,6 +5,19 @@ body {
   background-color: whitesmoke;
 }
 
+.dropdown-item.active {
+  background-color: #767093;
+}
+
+#explain {
+  max-width: 80%;
+  margin: $MarginOutline auto auto;
+  font-size: 0.8em;
+  & span {
+    display: inline-block;
+  }
+}
+
 // navタイトル レスポンシブ対応
 .md-nav {
   display: none;
@@ -53,16 +66,47 @@ body {
   }
 }
 
-// 選択画像preview部分
-// #sample {
-//   // margin: 10x auto !important;
-// }
-
 // ステータスラベル名調整
 .status-label {
   justify-content: center;
   padding: 6px 0px;
   width: 50px;
+}
+
+// tooltip
+#tooltip {
+  /* 位置の情報 */
+  display: inline-block;
+  position: relative;
+  width: 0.8em;
+  height: 0.8em;
+  vertical-align: middle;
+  border: none;
+
+  /* 中身の情報 */
+  background-color: rgb(175, 175, 175);
+  border-radius: 100%;
+
+  &:focus,
+  &:focus-visible {
+    border: none;
+  }
+
+  /* * * ハテナマーク * * */
+  &::before {
+    /* 位置の情報 */
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+
+    /* 中身の情報 */
+    content: "?";
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+  }
 }
 
 // canvasをレスポンシブに
@@ -115,6 +159,10 @@ body {
   .form-status {
     width: 30% !important;
     min-width: 30% !important;
+  }
+
+  #explain {
+    font-size: 0.6em;
   }
 }
 

@@ -63,7 +63,9 @@
           <div class="collapse navbar-collapse" id="navbarsExample05">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item active">
-                <a class="nav-link" aria-current="page" href="#">ホーム</a>
+                <a class="nav-link disabled" aria-current="page" href="#"
+                  >ホーム</a
+                >
               </li>
               <li class="nav-item">
                 <a
@@ -94,15 +96,19 @@
                 >
                 <ul class="dropdown-menu" aria-labelledby="dropdown05">
                   <li>
-                    <a class="dropdown-item" href="CharaSheet.html"
+                    <a class="dropdown-item active" href="#"
                       >クトゥルフTRPG キャラシ作成</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Coming soon...</a>
+                    <a class="dropdown-item disabled" href="#"
+                      >Coming soon...</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Coming soon...</a>
+                    <a class="dropdown-item disabled" href="#"
+                      >Coming soon...</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -116,7 +122,35 @@
 
     <div id="main-container">
       <!-- text input -->
-      <p>データを入力してください</p>
+      <p>
+        データを入力してください
+        <button
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#explain"
+          aria-expanded="false"
+          aria-controls="explain"
+          id="tooltip"
+        ></button>
+      </p>
+      <div class="form-control collapse" id="explain">
+        <p class="text-center">
+          <span>○ データを入力して「生成！」を押すと</span
+          ><span>キャラシが下に生成されます。</span>
+        </p>
+        <p class="text-center">
+          <span>○ 画面サイズによって画質が変わります。</span
+          ><span>PCでの使用を推奨します。</span>
+        </p>
+        <p class="text-center">
+          <span>○ フォントやらがおかしいときは</span
+          ><span>何度も「生成！」してください。</span>
+        </p>
+        <p class="text-center">
+          <span>○ PC画像は正方形にﾑﾘﾔﾘ変形されます。</span
+          ><span>トリミングできるようにしたい</span>
+        </p>
+      </div>
 
       <div class="form-group row">
         <div class="input-box">
@@ -156,28 +190,28 @@
               id="Last-name"
               placeholder="名字"
               class="form-control"
-              value="名字"
+              value=""
             />
             <input
               type="text"
               id="Last-read"
               placeholder="みょうじ"
               class="form-control"
-              value="みょうじ"
+              value=""
             />
             <input
               type="text"
               id="First-name"
               placeholder="名前"
               class="form-control"
-              value="名前"
+              value=""
             />
             <input
               type="text"
               id="First-read"
               placeholder="なまえ"
               class="form-control"
-              value="なまえ"
+              value=""
             />
           </div>
 
@@ -187,8 +221,8 @@
               >性別</label
             >
             <select class="form-select form-above" id="inputSelectSex">
-              <option value=""></option>
-              <option selected value="男">男</option>
+              <option value="" selected></option>
+              <option value="男">男</option>
               <option value="女">女</option>
               <option value="??">??</option>
             </select>
@@ -222,16 +256,16 @@
               id="height"
               placeholder="170"
               class="form-control"
-              value="170"
+              value=""
               oninput="value = value.replace(/[０-９]/g,s => String.fromCharCode(s.charCodeAt(0) - 65248)).replace(/\D/g,'');"
             />
             <span class="input-group-text">PL名</span>
             <input
               type="text"
               id="PL-name"
-              placeholder="いあ"
+              placeholder="にゃる"
               class="form-control"
-              value="いあ"
+              value=""
             />
           </div>
 
@@ -243,11 +277,7 @@
               aria-label="With textarea"
               id="other-data"
               placeholder="なんでもご自由に！"
-            >
-なんでもご自由に！
-どうぞ！
-</textarea
-            >
+            ></textarea>
           </div>
 
           <div class="input-group">
@@ -474,10 +504,9 @@
               class="form-control form-status form-above"
               id="SKILL1"
               placeholder="技能名"
-              value="目星"
             />
             <select class="form-select form-status form-above" id="SKILLval1">
-              <option value=""></option>
+              <option value="" selected></option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -510,7 +539,7 @@
               <option value="30">30</option>
               <option value="31">31</option>
               <option value="32">32</option>
-              <option value="33" selected>33</option>
+              <option value="33">33</option>
               <option value="34">34</option>
               <option value="35">35</option>
               <option value="36">36</option>
@@ -584,10 +613,9 @@
               class="form-control form-status form-above"
               id="SKILL2"
               placeholder="技能名"
-              value="聞き耳"
             />
             <select class="form-select form-status form-above" id="SKILLval2">
-              <option value=""></option>
+              <option value="" selected></option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -609,7 +637,7 @@
               <option value="19">19</option>
               <option value="20">20</option>
               <option value="21">21</option>
-              <option value="22" selected>22</option>
+              <option value="22">22</option>
               <option value="23">23</option>
               <option value="24">24</option>
               <option value="25">25</option>
@@ -1136,10 +1164,9 @@
               class="form-control form-status form-above"
               id="SKILL7"
               placeholder="技能名"
-              value="図書館"
             />
             <select class="form-select form-status form-above" id="SKILLval7">
-              <option value=""></option>
+              <option value="" selected></option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -1195,7 +1222,7 @@
               <option value="53">53</option>
               <option value="54">54</option>
               <option value="55">55</option>
-              <option value="56" selected>56</option>
+              <option value="56">56</option>
               <option value="57">57</option>
               <option value="58">58</option>
               <option value="59">59</option>
