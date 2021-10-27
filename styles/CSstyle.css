@@ -48,10 +48,6 @@ body {
   background-color: #f3f5f7;
 }
 
-#sample {
-  margin: 10px auto !important;
-}
-
 .status-label {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -75,6 +71,12 @@ body {
   height: 100%;
 }
 
+#PCsample {
+  max-width: 85%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 @media screen and (max-width: 480px) {
   /* 480px以下に適用されるCSS（スマホ用） */
   .sm-nav {
@@ -87,7 +89,7 @@ body {
     width: 20%;
     min-width: 80%;
   }
-  .form-sex {
+  .form-above {
     margin-bottom: 10px;
   }
   .form-status {

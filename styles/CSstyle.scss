@@ -54,9 +54,9 @@ body {
 }
 
 // 選択画像preview部分
-#sample {
-  margin: 10px auto !important;
-}
+// #sample {
+//   // margin: 10x auto !important;
+// }
 
 // ステータスラベル名調整
 .status-label {
@@ -83,6 +83,17 @@ body {
   height: 100%;
 }
 
+// 同様にPC画像もレスポンシブにする
+// #PC-container {
+//   // bootstrapによって実装済み
+//   position: relative;
+// }
+
+#PCsample {
+  max-width: 85%;
+  object-fit: contain;
+}
+
 @media screen and (max-width: 480px) {
   /* 480px以下に適用されるCSS（スマホ用） */
   .sm-nav {
@@ -97,7 +108,7 @@ body {
     width: 20%;
     min-width: 80%;
   }
-  .form-sex {
+  .form-above {
     margin-bottom: $MarginInput;
   }
   // status レスポンシブ統一

@@ -1,289 +1,245 @@
-// onloadイベントを追加する
-function addOnload(func, IMAGE) {
-  IMAGE.addEventListener("load", func, false);
+function addOnload(a, b) {
+  b.addEventListener("load", a, false);
 }
-
-/**
- * テンプレ画像SET
- * @param {String} container_id canvas親要素divのid
- * @param {String} canvas_id canvasのid
- */
-function loadImage(container_id, canvas_id) {
-  // 画像を読み込んでImageオブジェクトを作成する
-  var image = new Image();
-  image.src = "../images/CharaSheetTemplate.png";
-  image.onload = function () {
-    // 画像ロードが完了してからキャンバスの準備をする
-    var container = document.getElementById(container_id);
-    var canvas = document.getElementById(canvas_id);
-    var ctx = canvas.getContext("2d");
-    // 親要素のサイズをcanvasに指定
-    canvas.width = container.clientWidth;
-    canvas.height = container.clientHeight;
-    // 背景を白色に描画
-    ctx.fillStyle = "rgb(255,255,255)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // キャンバスに画像を描画（開始位置0,0）
-    // 第４引数、第５引数の指定サイズにリサイズ
-    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-    // // fillRect test
-    // ctx.fillStyle = "rgba(0,255,255,0.5)";
-    // let X = canvas.width * 0.039 + canvas.width * 0.0818 * 5;
-    // let Y = canvas.width * 0.65 - canvas.width * 0.0183 * 17;
-    // let W = canvas.width * 0.072;
-    // let H = canvas.width * 0.0183 * 18;
-    // ctx.fillRect(X, Y, W, H);
+function loadImage(c, a) {
+  var b = new Image();
+  b.src = "../images/CharaSheetTemplate.png";
+  b.onload = function () {
+    var e = document.getElementById(c);
+    var f = document.getElementById(a);
+    var d = f.getContext("2d");
+    f.width = e.clientWidth;
+    f.height = e.clientHeight;
+    d.fillStyle = "rgb(255,255,255)";
+    d.fillRect(0, 0, f.width, f.height);
+    d.drawImage(b, 0, 0, f.width, f.height);
   };
 }
-
-// キャンバスに文字を描く
 function drawText(
-  color_id,
-  image_id,
-  canvas_id,
-  LName_id,
-  FName_id,
-  Lread_id,
-  Fread_id,
-  Sex_id,
-  Year_id,
-  Month_id,
-  Day_id,
-  height_id,
-  PName_id,
-  other_id,
-  STR_id,
-  CON_id,
-  POW_id,
-  DEX_id,
-  APP_id,
-  SIZ_id,
-  INT_id,
-  EDU_id
+  aa,
+  E,
+  s,
+  G,
+  b,
+  L,
+  d,
+  g,
+  t,
+  S,
+  ab,
+  A,
+  Z,
+  C,
+  n,
+  P,
+  c,
+  af,
+  h,
+  B,
+  D,
+  K
 ) {
-  // 引数取得
-  var color = document.getElementById(color_id);
-  var File = document.getElementById(image_id);
-  var LName = document.getElementById(LName_id);
-  var FName = document.getElementById(FName_id);
-  var Lread = document.getElementById(Lread_id);
-  var Fread = document.getElementById(Fread_id);
-  var Sex = document.getElementById(Sex_id);
-  var Year = document.getElementById(Year_id);
-  var Month = document.getElementById(Month_id);
-  var Day = document.getElementById(Day_id);
-  var Height = document.getElementById(height_id);
-  var PLname = document.getElementById(PName_id);
-  var OtText = document.getElementById(other_id);
-  var STR = document.getElementById(STR_id);
-  var CON = document.getElementById(CON_id);
-  var POW = document.getElementById(POW_id);
-  var DEX = document.getElementById(DEX_id);
-  var APP = document.getElementById(APP_id);
-  var SIZ = document.getElementById(SIZ_id);
-  var INT = document.getElementById(INT_id);
-  var EDU = document.getElementById(EDU_id);
-
-  // キャラシテンプレ再ロード
-  const canvas = document.getElementById(canvas_id);
-  var ctx = canvas.getContext("2d");
-  const image = new Image();
-  image.src = "../images/CharaSheetTemplate.png";
-
-  // 塗りつぶし
-  ctx.fillStyle = "rgb(255,255,255)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = color.value;
-
-  function fillStatus(val, num) {
-    if (parseInt(val) > 18) {
-      val = "18";
+  var I = document.getElementById(aa);
+  var r = document.getElementById(E);
+  var v = document.getElementById(G);
+  var ag = document.getElementById(b);
+  var M = document.getElementById(L);
+  var q = document.getElementById(d);
+  var i = document.getElementById(g);
+  var ae = document.getElementById(t);
+  var V = document.getElementById(S);
+  var o = document.getElementById(ab);
+  var J = document.getElementById(A);
+  var U = document.getElementById(Z);
+  var z = document.getElementById(C);
+  var f = document.getElementById(n);
+  var O = document.getElementById(P);
+  var a = document.getElementById(c);
+  var R = document.getElementById(af);
+  var F = document.getElementById(h);
+  var N = document.getElementById(B);
+  var p = document.getElementById(D);
+  var ad = document.getElementById(K);
+  const j = document.getElementById(s);
+  var w = j.getContext("2d");
+  const e = new Image();
+  e.src = "../images/CharaSheetTemplate.png";
+  w.fillStyle = "rgb(255,255,255)";
+  w.fillRect(0, 0, j.width, j.height);
+  w.fillStyle = I.value;
+  function T(ai, ah) {
+    if (parseInt(ai) > 18) {
+      ai = "18";
     }
-    let X = canvas.width * 0.039 + canvas.width * 0.0818 * (num - 1);
-    let Y = canvas.width * 0.65 - canvas.width * 0.0183 * (parseInt(val) - 1);
-    let W = canvas.width * 0.072;
-    let H = canvas.width * 0.0183 * parseInt(val);
-    ctx.fillRect(X, Y, W, H);
+    let X = j.width * 0.039 + j.width * 0.0818 * (ah - 1);
+    let Y = j.width * 0.65 - j.width * 0.0183 * (parseInt(ai) - 1);
+    let W = j.width * 0.072;
+    let H = j.width * 0.0183 * parseInt(ai);
+    w.fillRect(X, Y, W, H);
   }
-
-  fillStatus(STR.value, 1);
-  fillStatus(CON.value, 2);
-  fillStatus(POW.value, 3);
-  fillStatus(DEX.value, 4);
-  fillStatus(APP.value, 5);
-  fillStatus(SIZ.value, 6);
-  fillStatus(INT.value, 7);
-  fillStatus(EDU.value, 8);
-
-  // PC画像描画
-
-  var PCimage = new Image();
-  PCimage.src = "../images/example.jpg";
-
-  addOnload(canvas_prev, image);
-  PCimage.onload = PC_prev();
-
-  function PC_prev() {
-    let X = canvas.width * 0.0327;
-    let Y = canvas.width * 0.023;
-    let W = canvas.width * 0.263;
-    let H = canvas.width * 0.263;
-    // PC画像のロードが完了したら描画
-    ctx.drawImage(PCimage, X, Y, W, H);
+  T(f.value, 1);
+  T(O.value, 2);
+  T(a.value, 3);
+  T(R.value, 4);
+  T(F.value, 5);
+  T(N.value, 6);
+  T(p.value, 7);
+  T(ad.value, 8);
+  var ac = new Image();
+  ac.src = r.src;
+  addOnload(Q, e);
+  ac.onload = u();
+  function u() {
+    let X = j.width * 0.0327;
+    let Y = j.width * 0.023;
+    let W = j.width * 0.263;
+    let H = j.width * 0.263;
+    w.drawImage(ac, X, Y, W, H);
   }
-
-  function canvas_prev() {
-    // 画像ロードが完了してから描画
-    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-    // name
-    // 文字スタイルを指定
-    let size = canvas.width * 0.045;
-    let x = canvas.width * 0.475;
-    let y = canvas.height * 0.0945;
-    fillcenterText(ctx, LName.value + " " + FName.value, x, y, size);
-
-    // read
-    size = canvas.width * 0.015;
-    x = canvas.width * 0.475;
-    y = canvas.width * 0.055;
-    fillcenterText(ctx, Lread.value + "      " + Fread.value, x, y, size);
-
-    // sex
-    size = canvas.width * 0.045;
-    x = canvas.width * 0.683;
-    y = canvas.width * 0.0875;
-    fillcenterText(ctx, Sex.value, x, y, size);
-
-    // height
-    size = canvas.width * 0.035;
-    x = canvas.width * 0.765;
-    y = canvas.width * 0.0845;
-    fillcenterText(ctx, Height.value, x, y, size);
-
-    // birth
-    size = canvas.width * 0.025;
-    x = canvas.width * 0.885;
-    y = canvas.width * 0.07;
-    if (Year.value == "  " && Month.value == "  " && Day.value == "  ") {
+  function Q() {
+    w.drawImage(e, 0, 0, j.width, j.height);
+    let size = j.width * 0.045;
+    let x = j.width * 0.475;
+    let y = j.height * 0.0945;
+    fillcenterText(w, v.value + " " + ag.value, x, y, size);
+    size = j.width * 0.015;
+    x = j.width * 0.475;
+    y = j.width * 0.055;
+    fillcenterText(w, M.value + "      " + q.value, x, y, size);
+    size = j.width * 0.045;
+    x = j.width * 0.683;
+    y = j.width * 0.0875;
+    fillcenterText(w, i.value, x, y, size);
+    size = j.width * 0.035;
+    x = j.width * 0.765;
+    y = j.width * 0.0845;
+    fillcenterText(w, J.value, x, y, size);
+    size = j.width * 0.025;
+    x = j.width * 0.885;
+    y = j.width * 0.07;
+    if (ae.value == "  " && V.value == "  " && o.value == "  ") {
     } else {
       fillcenterText(
-        ctx,
-        Year.value + "/     \n       " + Month.value + "/" + Day.value,
+        w,
+        ae.value + "/     \n       " + V.value + "/" + o.value,
         x,
         y,
         size
       );
     }
-
-    // other date
-    size = canvas.width * 0.02;
-    x = canvas.width * 0.325;
-    y = canvas.width * 0.133;
-    filltopleftText(ctx, OtText.value, x, y, size);
-
-    // PLname
-    size = canvas.width * 0.025;
-    x = canvas.width * 0.89;
-    y = canvas.width * 0.27;
-    fillcenterText(ctx, PLname.value, x, y, size);
-
-    // SAN
-    size = canvas.width * 0.07;
-    x = canvas.width * 0.883;
-    y = canvas.width * 0.383;
-    fillcenterText(ctx, parseInt(POW.value) * 5 + "", x, y, size);
-
-    // HP
-    size = canvas.width * 0.06;
-    x = canvas.width * 0.763;
-    y = canvas.width * 0.482;
-    let HP = (parseInt(CON.value) + parseInt(SIZ.value)) / 2;
+    size = j.width * 0.02;
+    x = j.width * 0.325;
+    y = j.width * 0.15;
+    filltopleftText(w, z.value, x, y, size);
+    size = j.width * 0.025;
+    x = j.width * 0.89;
+    y = j.width * 0.27;
+    fillcenterText(w, U.value, x, y, size);
+    size = j.width * 0.07;
+    x = j.width * 0.883;
+    y = j.width * 0.383;
+    fillcenterText(w, parseInt(a.value) * 5 + "", x, y, size);
+    size = j.width * 0.058;
+    x = j.width * 0.763;
+    y = j.width * 0.482;
+    let HP = (parseInt(O.value) + parseInt(N.value)) / 2;
     HP = Math.ceil(HP);
-    fillcenterText(ctx, HP + "", x, y, size);
-
-    // MP
-    size = canvas.width * 0.06;
-    x = canvas.width * 0.898;
-    y = canvas.width * 0.482;
-    fillcenterText(ctx, POW.value, x, y, size);
-
-    // IDEA
-    size = canvas.width * 0.06;
-    x = canvas.width * 0.767;
-    y = canvas.width * 0.5857;
-    fillcenterText(ctx, parseInt(INT.value) * 5 + "", x, y, size);
-
-    // 知識
-    size = canvas.width * 0.06;
-    x = canvas.width * 0.902;
-    y = canvas.width * 0.5857;
-    fillcenterText(ctx, parseInt(EDU.value) * 5 + "", x, y, size);
-
-    // 幸運
-    size = canvas.width * 0.06;
-    x = canvas.width * 0.767;
-    y = canvas.width * 0.687;
-    fillcenterText(ctx, parseInt(POW.value) * 5 + "", x, y, size);
-
-    // DB
-    size = canvas.width * 0.04;
-    x = canvas.width * 0.9;
-    y = canvas.width * 0.68;
-    let point = parseInt(STR.value) + parseInt(SIZ.value);
+    fillcenterText(w, HP + "", x, y, size);
+    size = j.width * 0.058;
+    x = j.width * 0.898;
+    y = j.width * 0.482;
+    fillcenterText(w, a.value, x, y, size);
+    size = j.width * 0.058;
+    x = j.width * 0.767;
+    y = j.width * 0.5857;
+    fillcenterText(w, parseInt(p.value) * 5 + "", x, y, size);
+    size = j.width * 0.058;
+    x = j.width * 0.902;
+    y = j.width * 0.5857;
+    let Know = parseInt(ad.value) * 5;
+    if (Know >= 100) {
+      Know = 99;
+    }
+    fillcenterText(w, Know + "", x, y, size);
+    size = j.width * 0.058;
+    x = j.width * 0.767;
+    y = j.width * 0.687;
+    fillcenterText(w, parseInt(a.value) * 5 + "", x, y, size);
+    size = j.width * 0.04;
+    x = j.width * 0.9;
+    y = j.width * 0.68;
+    let point = parseInt(f.value) + parseInt(N.value);
     let DB;
     if (point <= 12) {
       DB = "-1D6";
-    } else if (point <= 16) {
-      DB = "-1D4";
-    } else if (point <= 24) {
-      y = canvas.width * 0.675;
-      DB = "--";
-    } else if (point <= 32) {
-      DB = "+1D4";
-    } else if (point <= 40) {
-      DB = "+1D6";
     } else {
-      DB = "";
+      if (point <= 16) {
+        DB = "-1D4";
+      } else {
+        if (point <= 24) {
+          y = j.width * 0.675;
+          DB = "--";
+        } else {
+          if (point <= 32) {
+            DB = "+1D4";
+          } else {
+            if (point <= 40) {
+              DB = "+1D6";
+            } else {
+              DB = "";
+            }
+          }
+        }
+      }
     }
-    fillcenterText(ctx, DB, x, y, size);
+    fillcenterText(w, DB, x, y, size);
+    var ah = [];
+    var ai = [];
+    size = j.width * 0.027;
+    for (let k = 0; k < 18; k++) {
+      ah[k] = document.getElementById("SKILL" + (k + 1));
+      ai[k] = document.getElementById("SKILLval" + (k + 1));
+      let l = Math.floor(k / 6);
+      let m = k - 6 * l;
+      x = j.width * 0.05 + j.width * 0.31 * l;
+      y = j.width * 0.769 + j.width * 0.04 * m;
+      filltopleftText(w, ah[k].value, x, y, size);
+      x = j.width * 0.07 + j.width * 0.225 + j.width * 0.31 * l;
+      fillcenterText(w, ai[k].value, x, y, size);
+    }
+    function aj(al, ak) {
+      size = j.width * 0.023;
+      x = j.width * 0.0735 + j.width * 0.0818 * (ak - 1);
+      y = j.width * 0.657;
+      w.fillStyle = "rgba(255,255,255,0.9)";
+      fillcenterText(w, al.value, x, y, size);
+    }
+    aj(f, 1);
+    aj(O, 2);
+    aj(a, 3);
+    aj(R, 4);
+    aj(F, 5);
+    aj(N, 6);
+    aj(p, 7);
+    aj(ad, 8);
   }
 }
-
-/**
- * テキスト描画で改行させるためのメソッド
- * @param {ctx} context canvas
- * @param {String} text 書き出すテキスト
- * @param {int} x x軸
- * @param {int} y y軸
- */
-function fillTextLine(context, text, x, y) {
-  // \nで分割して配列にする
-  var textList = text.split("\n");
-  // あ はフォントサイズを取得するのに利用
-  var lineHeight = context.measureText("あ").width;
-  textList.forEach(function (text, i) {
-    // 配列を順番に読み出して、y（高さ)を計算しながら描画
-    context.fillText(text, x, y + lineHeight * i);
+function fillTextLine(b, d, a, f) {
+  var e = d.split("\n");
+  var c = b.measureText("あ").width;
+  e.forEach(function (h, g) {
+    b.fillText(h, a, f + c * g);
   });
 }
-
-// 左上基準の描画
-function filltopleftText(context, text, x, y, size) {
-  context.textBaseline = "top";
-  context.textAlign = "left";
-  context.font = size + "px 'RocknRoll One', sans-serif";
-  fillTextLine(context, text, x, y);
+function filltopleftText(c, d, a, e, b) {
+  c.textBaseline = "alphabetic";
+  c.textAlign = "left";
+  c.font = b + "px 'RocknRoll One', sans-serif";
+  fillTextLine(c, d, a, e);
 }
-
-// 中央基準の描画
-function fillcenterText(context, text, x, y, size) {
-  // 文字の配置を指定
-  //（左上基準にしたければtop/leftだが、文字の中心座標を指定するのでcenter）
-  context.textBaseline = "alphabetic";
-  context.textAlign = "center";
-  context.font = size + "px 'RocknRoll One', sans-serif";
-  fillTextLine(context, text, x, y);
+function fillcenterText(c, d, a, e, b) {
+  c.textBaseline = "alphabetic";
+  c.textAlign = "center";
+  c.font = b + "px 'RocknRoll One', sans-serif";
+  fillTextLine(c, d, a, e);
 }

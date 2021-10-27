@@ -1,20 +1,18 @@
-function OutputImage(target, canvas_id) {
+function OutputImage(target, canvas_id, sample_id) {
   const canvas = document.getElementById(canvas_id);
   // ファイル読み込みクラス
   var reader = new FileReader();
   reader.onload = function () {
-    $sample = document.getElementById("sample");
+    $sample = document.getElementById(sample_id);
 
     // Imageクラスを使ってdiv要素にサイズを設定
     img = new Image();
     img.src = this.result;
     img.onload = function () {
-      $sample.style.width = canvas.width * 0.5 + "px";
-      $sample.style.height = canvas.width * 0.5 + "px";
+      $sample.style.width = canvas.width * 0.3 + "px";
+      $sample.style.height = canvas.width * 0.3 + "px";
+      $sample.src = reader.result;
     };
-    // backgroundスタイルを設定
-    $sample.style.background =
-      "url(" + this.result + ") center center / contain no-repeat";
   };
   // 読み込んだ画像ファイルをURLに変換
   reader.readAsDataURL(target.files[0]);
