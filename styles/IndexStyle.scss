@@ -27,7 +27,7 @@
     }
   }
   & img.thumbnail {
-    max-width: 30%;
+    max-width: 200px;
     height: auto;
     border-radius: 3%;
     margin: 8px;
@@ -47,5 +47,12 @@
     position: absolute;
     bottom: 10%;
     right: 5%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .contents img.thumbnail {
+    max-width: 30%;
   }
 }
