@@ -16,10 +16,11 @@ $MarginOutline: 30px;
 }
 
 #main-container {
+  background-color: whitesmoke;
   // 子インライン要素を中央揃えに
   text-align: center;
-  // 横マージンを10%
-  margin: 50px 10%;
+  // 横パディングを10%
+  padding: 50px 10%;
 }
 
 // フォーム部分余白調整

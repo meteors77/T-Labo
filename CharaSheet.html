@@ -32,105 +32,106 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles/html5reset-1.6.1.css" />
+    <link rel="stylesheet" href="styles/bootstrap-reboot.css" />
     <link rel="stylesheet" href="styles/MainStyle.css" />
     <link rel="stylesheet" href="styles/CSstyle.css" />
   </head>
 
   <body onload="loadImage('canvas-container','preview');">
     <!-- nav start -->
-    <div id="nav-container">
-      <nav
-        class="navbar navbar-expand-lg navbar-dark bg-dark"
-        aria-label="Fifth navbar example"
-      >
-        <div class="container-fluid">
-          <a class="navbar-brand tool-title" href="#"
-            ><span class="sm-nav">6版</span
-            ><span class="md-nav">旧</span>クトゥルフ<span class="sm-nav"
-              >神話TRPG</span
+    <header>
+      <div id="nav-container">
+        <nav
+          class="navbar navbar-expand-lg navbar-dark bg-dark"
+          aria-label="Fifth navbar example"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand tool-title" href="#"
+              ><span class="sm-nav">6版</span
+              ><span class="md-nav">旧</span>クトゥルフ<span class="sm-nav"
+                >神話TRPG</span
+              >
+              キャラシ作成</a
             >
-            キャラシ作成</a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarsExample05"
-            aria-controls="navbarsExample05"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarsExample05"
-          >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item active">
-                <a class="nav-link" aria-current="page" href="index.html"
-                  >ホーム</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://twitter.com/tk37e"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Twitter</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link disabled"
-                  href="#"
-                  tabindex="-1"
-                  aria-disabled="true"
-                  >Coming soon...</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="dropdown05"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >つくったもの</a
-                >
-                <ul
-                  class="dropdown-menu dropdown-menu-end"
-                  aria-labelledby="dropdown05"
-                >
-                  <li>
-                    <a class="dropdown-item active" href="#"
-                      >クトゥルフTRPG キャラシ作成</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item disabled" href="#"
-                      >Coming soon...</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item disabled" href="#"
-                      >Coming soon...</a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <form></form>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarsExample05"
+              aria-controls="navbarsExample05"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarsExample05"
+            >
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" aria-current="page" href="index.html"
+                    >ホーム</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://twitter.com/tk37e"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Twitter</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >Coming soon...</a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="dropdown05"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >つくったもの</a
+                  >
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="dropdown05"
+                  >
+                    <li>
+                      <a class="dropdown-item active" href="#"
+                        >クトゥルフTRPG キャラシ作成</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item disabled" href="#"
+                        >Coming soon...</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item disabled" href="#"
+                        >Coming soon...</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <form></form>
+            </div>
           </div>
-        </div>
-      </nav>
-    </div>
+        </nav>
+      </div>
+    </header>
     <!-- nav finish -->
 
-    <div id="main-container">
+    <main id="main-container">
       <!-- text input -->
       <p>
         データを入力してください
@@ -161,7 +162,6 @@
           ><span>トリミングできるようにしたい</span>
         </p>
       </div>
-
       <div class="form-group row">
         <div class="input-box">
           <!-- color & PCimage -->
@@ -190,7 +190,6 @@
               ><img id="PCsample"
             /></span>
           </div>
-
           <!-- PCname -->
           <div class="input-group">
             <span class="input-group-text">なまえ</span>
@@ -223,7 +222,6 @@
               value=""
             />
           </div>
-
           <!-- sex & birth -->
           <div class="input-group">
             <label class="input-group-text form-above" for="inputSelectSex"
@@ -255,7 +253,6 @@
               <!-- 1930-2050まで -->
             </select>
           </div>
-
           <!-- height & PLname -->
           <div class="input-group">
             <span class="input-group-text">身長</span>
@@ -277,7 +274,6 @@
               value=""
             />
           </div>
-
           <!-- other data -->
           <div class="input-group">
             <span class="input-group-text">そのほか</span>
@@ -288,7 +284,6 @@
               placeholder="なんでもご自由に！"
             ></textarea>
           </div>
-
           <div class="input-group">
             <button
               class="input-group-text"
@@ -326,7 +321,6 @@
               <option value="17">17</option>
               <option value="18">18</option>
             </select>
-
             <label class="input-group-text status-label" for="inputSelectCON"
               >CON</label
             >
@@ -350,7 +344,6 @@
               <option value="17">17</option>
               <option value="18">18</option>
             </select>
-
             <label class="input-group-text status-label" for="inputSelectPOW"
               >POW</label
             >
@@ -374,7 +367,6 @@
               <option value="17">17</option>
               <option value="18">18</option>
             </select>
-
             <label class="input-group-text status-label" for="inputSelectDEX"
               >DEX</label
             >
@@ -399,7 +391,6 @@
               <option value="18">18</option>
             </select>
           </div>
-
           <!-- APP SIZ INT EDU -->
           <div class="input-group collapse status-input" id="StatusInput2">
             <label class="input-group-text status-label" for="inputSelectAPP"
@@ -425,7 +416,6 @@
               <option value="17">17</option>
               <option value="18">18</option>
             </select>
-
             <label class="input-group-text status-label" for="inputSelectSIZ"
               >SIZ</label
             >
@@ -445,7 +435,6 @@
               <option value="17">17</option>
               <option value="18">18</option>
             </select>
-
             <label class="input-group-text status-label" for="inputSelectINT"
               >INT</label
             >
@@ -465,7 +454,6 @@
               <option value="17">17</option>
               <option value="18">18</option>
             </select>
-
             <label class="input-group-text status-label" for="inputSelectEDU"
               >EDU</label
             >
@@ -492,7 +480,6 @@
               <option value="21">21</option>
             </select>
           </div>
-
           <!-- SKILLS -->
           <div class="input-group">
             <button
@@ -2486,25 +2473,23 @@
               <option value="99">99</option>
             </select>
           </div>
-
           <div class="btn-make">
             <button class="btn btn-outline-dark" onclick="drawText('preview');">
-              生成！</button
-            >　
+              生成！
+            </button>
             <button class="btn btn-outline-dark" id="download">
               だうんろーど！
             </button>
           </div>
         </div>
       </div>
-
       <!-- img preview -->
       <div id="canvas-container">
         <canvas id="preview">
           画像を表示するには、canvasタグをサポートしたブラウザが必要です。
         </canvas>
       </div>
-    </div>
+    </main>
 
     <!-- footer -->
     <footer>
