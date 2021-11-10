@@ -9,14 +9,45 @@
   display: inline-block;
 }
 
+#tooltip {
+  /* 位置の情報 */
+  display: inline-block;
+  position: relative;
+  width: 12.8px;
+  height: 12.8px;
+  vertical-align: middle;
+  /* 中身の情報 */
+  background-color: #afafaf;
+  border-radius: 100%;
+  /* * * ハテナマーク * * */
+}
+
+#tooltip::before {
+  /* 位置の情報 */
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.6);
+          transform: translate(-50%, -50%) scale(0.6);
+  /* 中身の情報 */
+  content: "?";
+  color: white;
+  font-size: 100%;
+  font-weight: bold;
+}
+
 .md-nav {
   display: none;
 }
 
-#main-container {
+#CS-container {
   background-color: whitesmoke;
   text-align: center;
-  padding: 50px 10%;
+  padding: 50px 0;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 780px;
 }
 
 .input-box {
@@ -29,6 +60,10 @@
 
 .btn-make {
   margin-top: 30px;
+}
+
+#download {
+  margin-left: 10px;
 }
 
 .form-control {

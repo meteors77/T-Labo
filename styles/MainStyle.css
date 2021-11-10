@@ -1,11 +1,20 @@
 @charset "UTF-8";
 body {
-  background-color: #bab7bc;
+  background-color: #64466e;
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #baa5df;
+  background-color: #baa5df !important;
+}
+
+.dropdown-item:hover {
+  background-color: #eeeff1;
+}
+
+.copyright {
+  font-size: 70%;
+  margin-top: 3rem;
 }
 
 footer {
@@ -20,7 +29,7 @@ footer {
 footer .footer-contents {
   position: absolute;
   top: 20%;
-  right: 10%;
+  right: 5%;
   bottom: 0;
   left: 0;
   margin: auto;
@@ -29,7 +38,7 @@ footer .footer-contents {
 }
 
 footer .footer-icon {
-  width: 2em;
+  width: 1.5em;
   height: auto;
 }
 
@@ -44,34 +53,6 @@ footer a:hover {
 
 main {
   background-color: whitesmoke;
-}
-
-#tooltip {
-  /* 位置の情報 */
-  display: inline-block;
-  position: relative;
-  width: 12.8px;
-  height: 12.8px;
-  vertical-align: middle;
-  /* 中身の情報 */
-  background-color: #afafaf;
-  border-radius: 100%;
-  /* * * ハテナマーク * * */
-}
-
-#tooltip::before {
-  /* 位置の情報 */
-  position: absolute;
-  display: inline-block;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%) scale(0.6);
-          transform: translate(-50%, -50%) scale(0.6);
-  /* 中身の情報 */
-  content: "?";
-  color: white;
-  font-size: 100%;
-  font-weight: bold;
 }
 
 @media screen and (max-width: 480px) {

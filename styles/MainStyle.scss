@@ -1,10 +1,19 @@
 body {
-  background-color: #bab7bc;
+  background-color: rgb(100, 70, 110);
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #baa5df;
+  background-color: #baa5df !important;
+}
+
+.dropdown-item:hover {
+  background-color: #eeeff1;
+}
+
+.copyright {
+  font-size: 70%;
+  margin-top: 3rem;
 }
 
 footer {
@@ -17,7 +26,7 @@ footer {
   & .footer-contents {
     position: absolute;
     top: 20%;
-    right: 10%;
+    right: 5%;
     bottom: 0;
     left: 0;
     margin: auto;
@@ -25,7 +34,7 @@ footer {
     height: 3.2rem;
   }
   & .footer-icon {
-    width: 2em;
+    width: 1.5em;
     height: auto;
   }
   & a {
@@ -39,36 +48,6 @@ footer {
 
 main {
   background-color: whitesmoke;
-}
-
-// tooltip
-#tooltip {
-  /* 位置の情報 */
-  display: inline-block;
-  position: relative;
-  width: 12.8px;
-  height: 12.8px;
-  vertical-align: middle;
-
-  /* 中身の情報 */
-  background-color: rgb(175, 175, 175);
-  border-radius: 100%;
-
-  /* * * ハテナマーク * * */
-  &::before {
-    /* 位置の情報 */
-    position: absolute;
-    display: inline-block;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.6);
-
-    /* 中身の情報 */
-    content: "?";
-    color: white;
-    font-size: 100%;
-    font-weight: bold;
-  }
 }
 
 @media screen and (max-width: 480px) {

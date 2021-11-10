@@ -10,18 +10,50 @@ $MarginOutline: 30px;
   }
 }
 
+// tooltip
+#tooltip {
+  /* 位置の情報 */
+  display: inline-block;
+  position: relative;
+  width: 12.8px;
+  height: 12.8px;
+  vertical-align: middle;
+
+  /* 中身の情報 */
+  background-color: rgb(175, 175, 175);
+  border-radius: 100%;
+
+  /* * * ハテナマーク * * */
+  &::before {
+    /* 位置の情報 */
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+
+    /* 中身の情報 */
+    content: "?";
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+  }
+}
+
 // navタイトル レスポンシブ対応
 // “6版クトゥルフ神話TRPG” 表示
 .md-nav {
   display: none;
 }
 
-#main-container {
+#CS-container {
   background-color: whitesmoke;
   // 子インライン要素を中央揃えに
   text-align: center;
-  // 横パディングを10%
-  padding: 50px 10%;
+  padding: 50px 0;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 780px;
 }
 
 // フォーム部分全体の余白調整
@@ -32,9 +64,12 @@ $MarginOutline: 30px;
   }
 }
 
-// ボタン上余白調整
+// ボタン余白調整
 .btn-make {
   margin-top: $MarginOutline;
+}
+#download {
+  margin-left: 10px;
 }
 
 .form-control {

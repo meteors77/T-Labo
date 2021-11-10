@@ -1,0 +1,119 @@
+@charset "UTF-8";
+#ab-container {
+  padding: 80px 0;
+}
+
+.title {
+  padding: 0 0 50px;
+}
+
+.ab-text {
+  display: block;
+  text-align: center;
+  margin: 16px auto;
+  max-width: 80%;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 80px auto 0;
+  border: solid 2px #bab7bc;
+  overflow: hidden;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: solid 1px white;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* メールscript読み込み失敗時の表示 */
+.tool-conts {
+  position: relative;
+}
+
+.failed:hover + .text {
+  visibility: visible;
+  opacity: 1;
+  bottom: calc(100%+10px);
+}
+
+.text:hover {
+  visibility: visible;
+  opacity: 1;
+  bottom: calc(100%+10px);
+}
+
+.text {
+  position: absolute;
+  display: block;
+  width: 14em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 100%;
+  background: gray;
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  line-height: 1.4;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  visibility: hidden;
+  opacity: 0;
+  bottom: 100%;
+}
+
+.text::after {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  bottom: -5px;
+  -webkit-transform: rotateZ(45deg) translateX(-50%);
+          transform: rotateZ(45deg) translateX(-50%);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  content: "";
+  background: gray;
+}
+
+.social {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+.social .s-icon {
+  margin: 20px;
+}
+
+.social .s-icon i {
+  color: black;
+}
+
+.profile-text {
+  font-weight: 300;
+}
+
+#credit-list a {
+  text-decoration: none;
+  color: #64466e;
+}
+
+#credit-list a:hover {
+  color: #a0a0a0;
+}
+/*# sourceMappingURL=AboutStyle.css.map */

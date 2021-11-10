@@ -2,7 +2,7 @@
 <html lang="ja">
   <!-- home -->
   <head
-    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/article#"
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"
   >
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,8 +11,18 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1, user-scalable=yes"
     />
     <title>てぃーラボ</title>
-    <meta name="description" content="いろいろつくって置いておく ^^) _旦~~" />
-    <meta property="og:image" content="images/ryu.png" />
+    <!-- OGP -->
+    <meta property="og:url" content="https://t-labo.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="いろいろつくって置いておく ^^) _旦~~"
+    />
+    <meta property="og:site_name" content="てぃーラボ" />
+    <meta
+      property="og:image"
+      content="https://t-labo.netlify.app/images/ryu.png"
+    />
     <!-- タブ上のアイコン表示 -->
     <link rel="icon" href="images/ryu.png" />
     <!-- font link -->
@@ -20,6 +30,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Otomanopee+One&family=RocknRoll+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
       rel="stylesheet"
     />
     <!-- bootstrap -->
@@ -65,22 +79,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://twitter.com/tk37e"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Twitter</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link disabled"
-                  href="#"
-                  tabindex="-1"
-                  aria-disabled="true"
-                  >Coming soon...</a
-                >
+                <a class="nav-link" href="/about.html">ABOUT</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -96,7 +95,7 @@
                   aria-labelledby="dropdown05"
                 >
                   <li>
-                    <a class="dropdown-item" href="/CharaSheet.html"
+                    <a class="dropdown-item" href="CharaSheet.html"
                       >クトゥルフTRPG キャラシ作成</a
                     >
                   </li>
@@ -122,50 +121,62 @@
 
     <!-- body start -->
     <main>
-      <div class="container">
+      <div id="index-container">
         <h1 class="display-1 title d-flex justify-content-center">
           てぃーラボ
         </h1>
         <p class="lead d-flex justify-content-center">
           これからいろいろ作っていくばしょです
         </p>
-        <div class="c-container">
-          <div class="contents">
-            <div class="content-link d-flex position-relative">
-              <img
-                src="/images/CharaSheetMini.png"
-                class="flex-shrink-0 me-3 thumbnail"
-                alt="CharaSheet"
-              />
-              <div class="content-text">
-                <h5 class="my-3 mx-2">
-                  6版クトゥルフ神話TRPG キャラシ作成つーる
-                </h5>
-                <p>
-                  でーたを入力するだけでキャラシがつくれます！<br />
-                  イラストソフトで毎度毎度つくるのがメンドーだったのでつーるにしました。
-                </p>
-                <br />
-                <span class="dummy-link"> GO →</span>
-                <a href="/CharaSheet.html" class="stretched-link"></a>
-              </div>
+
+        <!-- コンテンツ一覧 -->
+        <div class="contents">
+          <div class="content-link d-flex position-relative">
+            <img
+              src="/images/CharaSheetMini.png"
+              class="flex-shrink-0 me-3 thumbnail"
+              alt="CharaSheet"
+            />
+            <div class="content-text">
+              <h5 class="my-3 mx-2">6版クトゥルフ神話TRPG キャラシメーカー</h5>
+              <p>
+                データを入力するだけでキャラシがつくれます！<br />
+                イラストソフトで毎度毎度つくるのが面倒だったのでツールにしました。
+              </p>
+              <br />
+              <span class="dummy-link"> GO →</span>
+              <a href="/CharaSheet.html" class="stretched-link"></a>
             </div>
-            <div class="content-link d-flex position-relative disabled">
-              <img
-                src="/images/noimage.png"
-                class="flex-shrink-0 me-3 thumbnail"
-                alt="CharaSheet"
-              />
-              <div class="content-text">
-                <h5 class="my-3 mx-2">Coming soon...</h5>
-                <p></p>
-                <br />
-                <span class="dummy-link"> GO →</span>
-                <a href="#" class="stretched-link disabled"></a>
-              </div>
+          </div>
+          <div class="content-link d-flex position-relative disabled">
+            <img
+              src="/images/noimage.png"
+              class="flex-shrink-0 me-3 thumbnail"
+              alt="CharaSheet"
+            />
+            <div class="content-text">
+              <h5 class="my-3 mx-2">Coming soon...</h5>
+              <p></p>
+              <br />
+              <span class="dummy-link"> GO →</span>
+              <a href="#" class="stretched-link disabled"></a>
             </div>
           </div>
         </div>
+
+        <section class="news mx-auto">
+          <h2 class="display-6 align-items-start">news</h2>
+          <ul class="list-group list-group-flush list-news">
+            <li class="list-group-item">
+              <div class="news-date">2021.10.28</div>
+              <div class="news-detail">6版キャラシメーカー release</div>
+            </li>
+            <li class="list-group-item">
+              <div class="news-date">2021.10.28</div>
+              <div class="news-detail">てぃーラボ release</div>
+            </li>
+          </ul>
+        </section>
       </div>
     </main>
 
@@ -174,16 +185,21 @@
     <footer>
       <div class="footer-contents">
         <img src="/images/ryu.png" class="footer-icon" />
-        <span style="font-weight: bold">. . .　　</span>
+        <span style="font-weight: bold">. . .　</span>
         <small class="footer-text"
-          >&copy;2021
+          >&copy;2021 takamine
           <a
             href="https://twitter.com/tk37e"
             target="_blank"
             rel="noopener noreferrer"
-            >@tk37e</a
-          ></small
-        >
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://github.com/takamineA/T-Labo.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-github"></i></a
+        ></small>
       </div>
     </footer>
 
