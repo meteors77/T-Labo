@@ -11,6 +11,7 @@ $MarginOutline: 30px;
 }
 
 // navタイトル レスポンシブ対応
+// “6版クトゥルフ神話TRPG” 表示
 .md-nav {
   display: none;
 }
@@ -23,7 +24,7 @@ $MarginOutline: 30px;
   padding: 50px 10%;
 }
 
-// フォーム部分余白調整
+// フォーム部分全体の余白調整
 .input-box {
   margin: $MarginOutline 5px;
   & .input-group {
@@ -97,6 +98,8 @@ $MarginOutline: 30px;
 
 @media screen and (max-width: 480px) {
   /* 480px以下に適用されるCSS（スマホ用） */
+
+  // 画面幅によって “旧クトゥルフ” に変更
   .sm-nav {
     display: none;
   }
@@ -105,6 +108,7 @@ $MarginOutline: 30px;
     display: inline;
   }
 
+  // 性別-生年月日で折り返す
   #inputSelectSex {
     width: 20%;
     min-width: 80%;

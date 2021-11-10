@@ -1,6 +1,10 @@
 @charset "UTF-8";
 .title {
-  margin: 5rem auto 3rem;
+  padding: 5rem 0 3rem;
+}
+
+.c-container {
+  padding: 10px;
 }
 
 .contents {
