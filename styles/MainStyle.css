@@ -5,11 +5,11 @@ body {
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #baa5df !important;
+  background-color: #dfe1e3 !important;
 }
 
 .dropdown-item:hover {
-  background-color: #eeeff1;
+  background-color: #e4e6e9;
 }
 
 .copyright {
