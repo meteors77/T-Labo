@@ -28,9 +28,18 @@ function loadImage(container_id, canvas_id) {
     var container = document.getElementById(container_id);
     var canvas = document.getElementById(canvas_id);
     var ctx = canvas.getContext("2d");
-    // 親要素のサイズをcanvasに指定
-    canvas.width = image.width;
-    canvas.height = image.height;
+    console.log(container_id);
+    console.log(container);
+    console.log(container.clientWidth);
+    console.log(image.width);
+    if (container.clientWidth <= 1200) {
+      canvas.width = 1200;
+      canvas.height = 1200;
+    } else {
+      // 親要素のサイズをcanvasに指定
+      canvas.width = image.width;
+      canvas.height = image.height;
+    }
 
     // canvas.width = 300;
     // canvas.height = 300;
