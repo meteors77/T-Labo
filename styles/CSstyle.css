@@ -156,10 +156,6 @@
   #explain {
     font-size: 0.6em;
   }
-  #canvas-container {
-    height: 1200px;
-    width: 1200px;
-  }
 }
 
 @media screen and (max-width: 370px) {
