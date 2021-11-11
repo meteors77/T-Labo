@@ -15,7 +15,7 @@ document.getElementById("download").onclick = (event) => {
 };
 
 /**
- * テンプレ画像SET
+ * テンプレ画像SET & ダウンロードサイズ制限
  * @param {String} container_id canvas親要素divのid
  * @param {String} canvas_id canvasのid
  */
@@ -28,10 +28,17 @@ function loadImage(container_id, canvas_id) {
     var container = document.getElementById(container_id);
     var canvas = document.getElementById(canvas_id);
     var ctx = canvas.getContext("2d");
-    console.log(container_id);
-    console.log(container);
-    console.log(container.clientWidth);
-    console.log(image.width);
+    // スマホ・タブレットの場合のみcanvasを1200x1200に
+    if (
+      navigator.userAgent.indexOf("iPhone") > 0 ||
+      (navigator.userAgent.indexOf("Android") > 0 &&
+        navigator.userAgent.indexOf("Mobile") > 0) ||
+      navigator.userAgent.indexOf("iPad") > 0 ||
+      navigator.userAgent.indexOf("Android") > 0
+    ) {
+      container.clientWidth = 1200;
+      container.clientHeight = 1200;
+    }
     if (container.clientWidth <= 1200) {
       canvas.width = 1200;
       canvas.height = 1200;
@@ -41,8 +48,6 @@ function loadImage(container_id, canvas_id) {
       canvas.height = image.height;
     }
 
-    // canvas.width = 300;
-    // canvas.height = 300;
     // 背景を白色に描画
     ctx.fillStyle = "rgb(255,255,255)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -52,6 +57,14 @@ function loadImage(container_id, canvas_id) {
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     var png = canvas.toDataURL("image/png");
     document.getElementById("canvas-img").src = png;
+
+    //ダウンロードサイズ規制
+    if (container.clientWidth <= 1200) {
+      var set1 = document.getElementById("2000");
+      var set2 = document.getElementById("4500");
+      set1.classList.add("disabled");
+      set2.classList.add("disabled");
+    }
   };
 }
 

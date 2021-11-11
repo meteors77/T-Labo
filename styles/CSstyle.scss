@@ -57,19 +57,25 @@ $MarginOutline: 30px;
 }
 
 // フォーム部分全体の余白調整
-.input-box {
-  margin: $MarginOutline 5px;
-  & .input-group {
-    margin: $MarginInput 5px;
+
+.row {
+  margin-right: 0;
+  margin-left: -16px;
+  & .input-box {
+    margin: $MarginOutline 5px;
+
+    & .input-group {
+      margin: $MarginInput 5px;
+    }
   }
 }
 
 // ボタン余白調整
 .btn-make {
   margin-top: $MarginOutline;
-}
-#download {
-  margin-left: 10px;
+  & #download {
+    margin-left: 10px;
+  }
 }
 
 .form-control {
@@ -102,37 +108,36 @@ $MarginOutline: 30px;
   width: 50px;
 }
 
-// // canvasをレスポンシブに
-// #canvas-container {
-//   // 素材の画像と同じアスペクト比の要素を用意し、そのサイズをcanvasの属性値として設定
-//   position: relative;
-//   height: 0;
-//   overflow: hidden;
-//   // 横幅に対する比率で縦幅を指定（100%→正方形）
-//   padding-top: 100%;
-// }
-
-// #preview {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-// }
+// ボタンの▼
+.toggle-button::after {
+  display: inline-block;
+  margin-left: 0.4em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  box-sizing: border-box;
+}
 
 #canvas-container {
+  // 画面左端に固定
   position: absolute;
   right: 0;
   height: 1500px;
   width: 1500px;
   overflow: hidden;
+  // 非表示
+  z-index: -1;
   visibility: hidden;
-}
-#preview {
-  position: absolute;
-  right: 0;
-  width: 100%;
-  height: 100%;
+
+  & #preview {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 // imgも同様にレスポンシブ対応
@@ -143,14 +148,14 @@ $MarginOutline: 30px;
   overflow: hidden;
   // 横幅に対する比率で縦幅を指定（100%→正方形）
   padding-top: 100%;
-}
 
-#canvas-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  & #canvas-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 // 同様にPC画像もレスポンシブにする
@@ -192,11 +197,6 @@ $MarginOutline: 30px;
 
   #explain {
     font-size: 0.6em;
-  }
-
-  #canvas-container {
-    height: 1200px;
-    width: 1200px;
   }
 }
 

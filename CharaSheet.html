@@ -62,7 +62,7 @@
           aria-label="Fifth navbar example"
         >
           <div class="container-fluid">
-            <a class="navbar-brand tool-title" href="#"
+            <a class="navbar-brand tool-title"
               ><span class="sm-nav">6版</span
               ><span class="md-nav">旧</span>クトゥルフ<span class="sm-nav"
                 >神話TRPG</span
@@ -107,19 +107,15 @@
                     aria-labelledby="dropdown05"
                   >
                     <li>
-                      <a class="dropdown-item active" href="#"
+                      <a class="dropdown-item active"
                         >クトゥルフTRPG キャラシ作成</a
                       >
                     </li>
                     <li>
-                      <a class="dropdown-item disabled" href="#"
-                        >Coming soon...</a
-                      >
+                      <a class="dropdown-item disabled">Coming soon...</a>
                     </li>
                     <li>
-                      <a class="dropdown-item disabled" href="#"
-                        >Coming soon...</a
-                      >
+                      <a class="dropdown-item disabled">Coming soon...</a>
                     </li>
                   </ul>
                 </li>
@@ -291,14 +287,14 @@
               </div>
               <div class="input-group">
                 <button
-                  class="input-group-text"
+                  class="input-group-text toggle-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target=".status-input"
                   aria-expanded="false"
                   aria-controls="StatusInput1 StatusInput2"
                 >
-                  能力値入力欄　▼
+                  能力値入力欄
                 </button>
               </div>
               <!-- STR CON POW DEX -->
@@ -504,14 +500,14 @@
               <!-- SKILLS -->
               <div class="input-group">
                 <button
-                  class="input-group-text"
+                  class="input-group-text toggle-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target=".skills-input"
                   aria-expanded="false"
                   aria-controls="SkillsInput1 SkillsInput2 SkillsInput3 SkillsInput4 SkillsInput5 SkillsInput6 SkillsInput7 SkillsInput8 SkillsInput9"
                 >
-                  技能入力欄　▼
+                  技能入力欄
                 </button>
               </div>
               <div class="input-group collapse skills-input" id="SkillsInput1">
@@ -774,9 +770,49 @@
               >
                 生成！
               </button>
-              <button class="btn btn-outline-dark" id="download">
-                だうんろーど！
-              </button>
+              <div class="btn-group">
+                <button class="btn btn-outline-dark" id="download">
+                  だうんろーど！
+                </button>
+                <button
+                  type="button"
+                  class="
+                    btn btn-outline-dark
+                    dropdown-toggle dropdown-toggle-split
+                  "
+                  id="dropdownMenuReference"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  data-bs-reference="parent"
+                >
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuReference"
+                >
+                  <li>
+                    <a class="dropdown-item" id="600" data-value="600"
+                      >600x600</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" id="1200" data-value="1200"
+                      >1200x1200</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" id="2000" data-value="2000"
+                      >2000x2000</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" id="4500" data-value="4500"
+                      >4500x4500</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
