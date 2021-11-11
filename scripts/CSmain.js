@@ -67,15 +67,13 @@ function loadImage(container_id, canvas_id) {
     var canvas = document.getElementById(canvas_id);
     var ctx = canvas.getContext("2d");
 
-    // if (container.clientWidth <= 1200) {
-    //   canvas.width = 1200;
-    //   canvas.height = 1200;
-    // } else {
-    //   canvas.width = image.width;
-    //   canvas.height = image.height;
-    // }
-    canvas.width = image.width;
-    canvas.height = image.height;
+    if (container.clientWidth <= 1200) {
+      canvas.width = 1200;
+      canvas.height = 1200;
+    } else {
+      canvas.width = image.width;
+      canvas.height = image.height;
+    }
 
     // 背景を白色に描画
     ctx.fillStyle = "rgb(255,255,255)";
