@@ -86,7 +86,9 @@ function loadImage(container_id, canvas_id) {
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     var png = canvas.toDataURL("image/png");
     console.log(png);
-    document.getElementById("canvas-img").src = png;
+    if (png != "data:,") {
+      document.getElementById("canvas-img").src = png;
+    }
 
     //ダウンロードサイズ規制
     if (container.clientWidth <= 1200) {
