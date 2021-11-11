@@ -5,11 +5,13 @@ function addOnload(func, IMAGE) {
 
 // download
 document.getElementById("download").onclick = (event) => {
-  let canvas = document.getElementById("preview");
-  let link = document.createElement("a");
-  link.href = canvas.toDataURL("image/png");
-  link.download = "charasheet.png";
-  link.click();
+  var canvas = document.getElementById("preview");
+  // var link = document.createElement("a");
+  // link.href = canvas.toDataURL("image/png");
+  var png = canvas.toDataURL("image/png");
+  document.getElementById("canvas-img").src = png;
+  // link.download = "charasheet.png";
+  // link.click();
 };
 
 /**
@@ -26,12 +28,12 @@ function loadImage(container_id, canvas_id) {
     var container = document.getElementById(container_id);
     var canvas = document.getElementById(canvas_id);
     var ctx = canvas.getContext("2d");
-    // // 親要素のサイズをcanvasに指定
-    // canvas.width = image.width;
-    // canvas.height = image.height;
+    // 親要素のサイズをcanvasに指定
+    canvas.width = image.width;
+    canvas.height = image.height;
 
-    canvas.width = 300;
-    canvas.height = 300;
+    // canvas.width = 300;
+    // canvas.height = 300;
     // 背景を白色に描画
     ctx.fillStyle = "rgb(255,255,255)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -39,6 +41,8 @@ function loadImage(container_id, canvas_id) {
     // キャンバスに画像を描画（開始位置0,0）
     // 第４引数、第５引数の指定サイズにリサイズ
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    var png = canvas.toDataURL("image/png");
+    document.getElementById("canvas-img").src = png;
   };
 }
 
@@ -272,6 +276,9 @@ function drawText(canvas_id) {
     TextStatus(SIZ, 6);
     TextStatus(INT, 7);
     TextStatus(EDU, 8);
+
+    var png = canvas.toDataURL("image/png");
+    document.getElementById("canvas-img").src = png;
   }
 }
 
