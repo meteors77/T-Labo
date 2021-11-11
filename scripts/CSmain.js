@@ -20,14 +20,36 @@ function addOnload(func, IMAGE) {
 
 // download
 document.getElementById("download").onclick = (event) => {
-  var canvas = document.getElementById("preview");
-  // var link = document.createElement("a");
-  // link.href = canvas.toDataURL("image/png");
-  var png = canvas.toDataURL("image/png");
-  document.getElementById("canvas-img").src = png;
-  // link.download = "charasheet.png";
-  // link.click();
+  var img = document.getElementById("canvas-img");
+  var link = document.createElement("a");
+  link.href = img.getAttribute("src");
+  link.download = "charasheet.png";
+  link.click();
 };
+
+// 画像サイズを変更するメソッド
+function resizeImg(a_id) {
+  var a = document.getElementById(a_id);
+  var lgCvs = document.getElementById("preview");
+  var cvs = document.getElementById("resize");
+  var ctx = cvs.getContext("2d");
+  cvs.width = parseInt(a.getAttribute("data-value"));
+  cvs.height = parseInt(a.getAttribute("data-value"));
+
+  // 現在のcanvasから画像を生成
+  // 即時関数を利用
+  var img = (function () {
+    var image = document.createElement("img");
+    var lgCvs = document.getElementById("preview");
+    image.src = lgCvs.toDataURL("image/png");
+    return image;
+  })();
+  img.onload = function () {
+    ctx.drawImage(img, 0, 0, cvs.width, cvs.height);
+    var imgcvs = document.getElementById("canvas-img");
+    imgcvs.src = cvs.toDataURL("image/png");
+  };
+}
 
 // 画像のエラー表示を用意
 function createCanvas() {
@@ -89,8 +111,9 @@ function loadImage(container_id, canvas_id) {
 
     //ダウンロードサイズ規制
     if (container.clientWidth <= 1200) {
-      var set1 = document.getElementById("2000");
-      var set2 = document.getElementById("4500");
+      var set1 = document.getElementById("medImg");
+      var set2 = document.getElementById("bigImg");
+      // スマホ・タブレットの場合は2000,4500のサイズを指定できない
       set1.classList.add("disabled");
       set2.classList.add("disabled");
     }

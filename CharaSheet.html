@@ -51,7 +51,7 @@
   <body onload="loadImage('canvas-container','preview');">
     <div id="canvas-container">
       <canvas id="preview"></canvas>
-      <canvas id="error"></canvas>
+      <canvas id="resize"></canvas>
     </div>
     <!-- nav start -->
     <header>
@@ -791,22 +791,38 @@
                   aria-labelledby="dropdownMenuReference"
                 >
                   <li>
-                    <a class="dropdown-item" id="600" data-value="600"
+                    <a
+                      class="dropdown-item"
+                      id="minImg"
+                      data-value="600"
+                      onclick="resizeImg('minImg');"
                       >600x600</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" id="1200" data-value="1200"
+                    <a
+                      class="dropdown-item"
+                      id="smlImg"
+                      data-value="1200"
+                      onclick="resizeImg('smlImg');"
                       >1200x1200</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" id="2000" data-value="2000"
+                    <a
+                      class="dropdown-item"
+                      id="medImg"
+                      data-value="2000"
+                      onclick="resizeImg('medImg');"
                       >2000x2000</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" id="4500" data-value="4500"
+                    <a
+                      class="dropdown-item"
+                      id="bigImg"
+                      data-value="4500"
+                      onclick="resizeImg('bigImg');"
                       >4500x4500</a
                     >
                   </li>
