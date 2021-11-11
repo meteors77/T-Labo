@@ -31,10 +31,9 @@ function loadImage(container_id, canvas_id) {
     // スマホ・タブレットの場合のみcanvasを1200x1200に
     if (
       navigator.userAgent.indexOf("iPhone") > 0 ||
-      (navigator.userAgent.indexOf("Android") > 0 &&
-        navigator.userAgent.indexOf("Mobile") > 0) ||
       navigator.userAgent.indexOf("iPad") > 0 ||
-      navigator.userAgent.indexOf("Android") > 0
+      navigator.userAgent.indexOf("Android") > 0 ||
+      navigator.userAgent.indexOf("Mobile") > 0
     ) {
       container.clientWidth = 1200;
       container.clientHeight = 1200;
