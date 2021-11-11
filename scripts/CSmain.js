@@ -29,11 +29,11 @@ function loadImage(container_id, canvas_id) {
     var canvas = document.getElementById(canvas_id);
     var ctx = canvas.getContext("2d");
     // 親要素のサイズをcanvasに指定
-    canvas.width = image.width;
-    canvas.height = image.height;
+    // canvas.width = image.width;
+    // canvas.height = image.height;
 
-    // canvas.width = 300;
-    // canvas.height = 300;
+    canvas.width = 300;
+    canvas.height = 300;
     // 背景を白色に描画
     ctx.fillStyle = "rgb(255,255,255)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
