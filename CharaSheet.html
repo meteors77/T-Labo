@@ -49,6 +49,11 @@
   </head>
 
   <body onload="loadImage('canvas-container','preview');">
+    <div id="canvas-container">
+      <canvas id="preview">
+        画像を表示するには、canvasタグをサポートしたブラウザが必要です。
+      </canvas>
+    </div>
     <!-- nav start -->
     <header>
       <div id="nav-container">
@@ -776,11 +781,7 @@
           </div>
         </div>
         <!-- img preview -->
-        <div id="canvas-container">
-          <canvas id="preview">
-            画像を表示するには、canvasタグをサポートしたブラウザが必要です。
-          </canvas>
-        </div>
+
         <div id="img-container">
           <img id="canvas-img" />
         </div>

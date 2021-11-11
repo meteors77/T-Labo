@@ -102,24 +102,35 @@ $MarginOutline: 30px;
   width: 50px;
 }
 
-// canvasをレスポンシブに
-#canvas-container {
-  // 素材の画像と同じアスペクト比の要素を用意し、そのサイズをcanvasの属性値として設定
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  // 横幅に対する比率で縦幅を指定（100%→正方形）
-  padding-top: 100%;
-}
+// // canvasをレスポンシブに
+// #canvas-container {
+//   // 素材の画像と同じアスペクト比の要素を用意し、そのサイズをcanvasの属性値として設定
+//   position: relative;
+//   height: 0;
+//   overflow: hidden;
+//   // 横幅に対する比率で縦幅を指定（100%→正方形）
+//   padding-top: 100%;
+// }
 
+// #preview {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+
+#canvas-container {
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+}
 #preview {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
 }
 
+// imgも同様にレスポンシブ対応
 #img-container {
   // 素材の画像と同じアスペクト比の要素を用意し、そのサイズをcanvasの属性値として設定
   position: relative;
