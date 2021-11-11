@@ -1,3 +1,18 @@
+// // PC以外のデバイスを検知
+// // userAgent廃止により無効？
+// var content = document.getElementById("canvas-container");
+// // スマホ・タブレットの場合のみcanvasを1200x1200に
+// var ua = navigator.userAgent;
+// if (
+//   ua.indexOf("iPhone") > 0 ||
+//   ua.indexOf("iPad") > 0 ||
+//   ua.indexOf("Android") > 0 ||
+//   ua.indexOf("Mobile") > 0
+// ) {
+//   content.clientWidth = 1200;
+//   content.clientHeight = 1200;
+// }
+
 // onloadイベントを追加する
 function addOnload(func, IMAGE) {
   IMAGE.addEventListener("load", func, false);
@@ -28,16 +43,7 @@ function loadImage(container_id, canvas_id) {
     var container = document.getElementById(container_id);
     var canvas = document.getElementById(canvas_id);
     var ctx = canvas.getContext("2d");
-    // スマホ・タブレットの場合のみcanvasを1200x1200に
-    if (
-      navigator.userAgent.indexOf("iPhone") > 0 ||
-      navigator.userAgent.indexOf("iPad") > 0 ||
-      navigator.userAgent.indexOf("Android") > 0 ||
-      navigator.userAgent.indexOf("Mobile") > 0
-    ) {
-      container.clientWidth = 1200;
-      container.clientHeight = 1200;
-    }
+
     if (container.clientWidth <= 1200) {
       canvas.width = 1200;
       canvas.height = 1200;
