@@ -29,12 +29,35 @@ document.getElementById("download").onclick = (event) => {
   // link.click();
 };
 
+// 画像のエラー表示を用意
+function createCanvas() {
+  var cvs = document.createElement("canvas");
+  cvs.width = 400;
+  cvs.height = cvs.width;
+  let context = cvs.getContext("2d");
+  let text = "ERROR\n縦向きにしてリロードしてください";
+  context.fillStyle = "rgb(70,70,70)";
+  context.fillRect(0, 0, cvs.width, cvs.height);
+  context.fillStyle = "rgb(200,200,200)";
+  fillcenterText(
+    context,
+    text,
+    cvs.width * 0.5,
+    cvs.height * 0.5,
+    cvs.width * 0.04
+  );
+  return cvs;
+}
+
 /**
  * テンプレ画像SET & ダウンロードサイズ制限
  * @param {String} container_id canvas親要素divのid
  * @param {String} canvas_id canvasのid
  */
 function loadImage(container_id, canvas_id) {
+  var error = document.querySelector("#canvas-img");
+  var cvs = createCanvas();
+  error.src = cvs.toDataURL();
   // 画像を読み込んでImageオブジェクトを作成する
   var image = new Image();
   image.src = "../images/CharaSheetTemplate.png";
