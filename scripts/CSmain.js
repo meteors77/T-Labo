@@ -67,14 +67,15 @@ function loadImage(container_id, canvas_id) {
     var canvas = document.getElementById(canvas_id);
     var ctx = canvas.getContext("2d");
 
-    if (container.clientWidth <= 1200) {
-      canvas.width = 1200;
-      canvas.height = 1200;
-    } else {
-      // 親要素のサイズをcanvasに指定
-      canvas.width = image.width;
-      canvas.height = image.height;
-    }
+    // if (container.clientWidth <= 1200) {
+    //   canvas.width = 1200;
+    //   canvas.height = 1200;
+    // } else {
+    //   canvas.width = image.width;
+    //   canvas.height = image.height;
+    // }
+    canvas.width = image.width;
+    canvas.height = image.height;
 
     // 背景を白色に描画
     ctx.fillStyle = "rgb(255,255,255)";
@@ -84,6 +85,7 @@ function loadImage(container_id, canvas_id) {
     // 第４引数、第５引数の指定サイズにリサイズ
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     var png = canvas.toDataURL("image/png");
+    console.log(png);
     document.getElementById("canvas-img").src = png;
 
     //ダウンロードサイズ規制
