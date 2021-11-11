@@ -26,16 +26,19 @@ function loadImage(container_id, canvas_id) {
     var container = document.getElementById(container_id);
     var canvas = document.getElementById(canvas_id);
     var ctx = canvas.getContext("2d");
-    // 親要素のサイズをcanvasに指定
-    canvas.width = image.width;
-    canvas.height = image.height;
+    // // 親要素のサイズをcanvasに指定
+    // canvas.width = image.width;
+    // canvas.height = image.height;
+
+    canvas.width = 300;
+    canvas.height = 300;
     // 背景を白色に描画
     ctx.fillStyle = "rgb(255,255,255)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // キャンバスに画像を描画（開始位置0,0）
     // 第４引数、第５引数の指定サイズにリサイズ
-    ctx.drawImage(image, 0, 0);
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
   };
 }
 

@@ -1,5 +1,10 @@
-function OutputImage(target, canvas_id, sample_id) {
-  const canvas = document.getElementById(canvas_id);
+/**
+ * PC画像のプレビュー表示
+ * @param {String} target inputタグ
+ * @param {String} sample_id 表示するcanvasのid
+ */
+
+function OutputImage(target, sample_id) {
   // ファイル読み込みクラス
   var reader = new FileReader();
   reader.onload = function () {
@@ -9,8 +14,8 @@ function OutputImage(target, canvas_id, sample_id) {
     img = new Image();
     img.src = this.result;
     img.onload = function () {
-      $sample.style.width = canvas.width * 0.3 + "px";
-      $sample.style.height = canvas.width * 0.3 + "px";
+      $sample.style.width = "300px";
+      $sample.style.height = "300px";
       $sample.src = reader.result;
     };
   };
@@ -18,7 +23,7 @@ function OutputImage(target, canvas_id, sample_id) {
   reader.readAsDataURL(target.files[0]);
 }
 
-// 生年月日ドロップダウンリスト生成
+/* 生年月日ドロップダウンリスト生成 */
 
 // dropdown-toggle → birth-select
 var userBirthdayYear = document.querySelector(".birthday-year");
@@ -62,6 +67,15 @@ userBirthdayMonth.addEventListener("change", () => {
     createElementsForOptions(userBirthdayDay, l);
   }
 });
+
+/* 技能のoption要素を生成 */
+var skillSelect = [];
+for (var num = 1; num <= 18; num++) {
+  skillSelect[num] = document.querySelector("#SKILLval" + num);
+  for (var opNum = 1; opNum <= 99; opNum++) {
+    createElementsForOptions(skillSelect[num], opNum);
+  }
+}
 
 /**
  * selectボックスのoption要素を生成するメソッド
