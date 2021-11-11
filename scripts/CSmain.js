@@ -83,7 +83,6 @@ function loadImage(container_id, canvas_id) {
     // 第４引数、第５引数の指定サイズにリサイズ
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     var png = canvas.toDataURL("image/png");
-    console.log(png);
     if (png != "data:,") {
       document.getElementById("canvas-img").src = png;
     }
@@ -329,8 +328,14 @@ function drawText(canvas_id) {
     TextStatus(INT, 7);
     TextStatus(EDU, 8);
 
+    // 再度error判定→imgに表示
+    var error = document.querySelector("#canvas-img");
+    var cvs = createCanvas();
+    error.src = cvs.toDataURL();
     var png = canvas.toDataURL("image/png");
-    document.getElementById("canvas-img").src = png;
+    if (png != "data:,") {
+      document.getElementById("canvas-img").src = png;
+    }
   }
 }
 
