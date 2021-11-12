@@ -48,6 +48,7 @@ $MarginOutline: 30px;
 
 #CS-container {
   // 子インライン要素を中央揃えに
+  position: relative;
   text-align: center;
   padding: 50px 0;
   margin: 0 auto;
@@ -112,6 +113,15 @@ $MarginOutline: 30px;
   width: 50px;
 }
 
+.btn-outline-dark {
+  color: #1d1a22;
+  border-color: #1d1a22;
+  &:hover {
+    color: #fff;
+    background-color: #1d1a22;
+    border-color: #1d1a22;
+  }
+}
 // ボタンの▼
 .toggle-button::after {
   display: inline-block;
@@ -123,6 +133,29 @@ $MarginOutline: 30px;
   border-bottom: 0;
   border-left: 0.3em solid transparent;
   box-sizing: border-box;
+}
+
+#TemPre-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 0 3px 2px rgba(64, 56, 74, 0.29);
+
+  .size-list {
+    display: block;
+    padding: 10px 0;
+    & #size-title {
+      display: inline-block;
+      font-weight: 350;
+      vertical-align: top;
+      text-align: center;
+    }
+    & #size-text {
+      display: inline-block;
+      padding-left: 40px;
+      font-weight: 300;
+    }
+  }
 }
 
 #canvas-container {
@@ -146,8 +179,10 @@ $MarginOutline: 30px;
 
 // imgも同様にレスポンシブ対応
 #img-container {
+  border: solid 0.1px white;
   // 素材の画像と同じアスペクト比の要素を用意し、そのサイズをcanvasの属性値として設定
   position: relative;
+
   height: 0;
   overflow: hidden;
   // 横幅に対する比率で縦幅を指定（100%→正方形）
@@ -297,6 +332,10 @@ $MarginOutline: 30px;
     display: inline;
   }
 
+  #explain {
+    font-size: 0.6em;
+  }
+
   // 性別-生年月日で折り返す
   #inputSelectSex {
     width: 20%;
@@ -315,8 +354,8 @@ $MarginOutline: 30px;
     min-width: 30% !important;
   }
 
-  #explain {
-    font-size: 0.6em;
+  #TemPre-container {
+    width: 100%;
   }
 }
 

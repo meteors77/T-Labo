@@ -8,8 +8,23 @@ nav {
   background-color: #1d1a22;
 }
 
+nav .navbar-toggler {
+  border: 0;
+}
+
+nav .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+nav .navbar-collapse {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
 main {
   background-color: #edecee;
+  padding-top: 60px;
 }
 
 .dropdown-item.active,

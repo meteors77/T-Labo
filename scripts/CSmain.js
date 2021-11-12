@@ -144,6 +144,17 @@ function loadImage(container_id, canvas_id) {
       canvas.height = image.height;
     }
 
+    // フォント読込遅れ改善
+    ctx.textBaseline = "alphabetic";
+    ctx.textAlign = "left";
+    ctx.font = canvas.width * 0.1 + "px 'RocknRoll One', sans-serif";
+    fillTextLine(
+      ctx,
+      "フォント読込（黑男女投擲英馬歴工鍵聞歩術精析跡跳）",
+      0,
+      0
+    );
+
     // 背景を白色に描画
     ctx.fillStyle = "rgb(255,255,255)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -201,16 +212,6 @@ function drawText(canvas_id) {
   var ctx = canvas.getContext("2d");
   const image = new Image();
   image.src = "../images/CharaSheetTemplate.png";
-
-  ctx.fillStyle = "rgb(0,0,0)";
-  // フォント読込遅れ改善
-  fillcenterText(
-    ctx,
-    "フォント読込（黑英馬歴工鍵聞歩術精析跡跳）",
-    canvas.width * 0.5,
-    canvas.width * 0.5,
-    canvas.width * 0.07
-  );
 
   // 塗りつぶし
   ctx.fillStyle = "rgb(255,255,255)";
@@ -420,6 +421,7 @@ function drawText(canvas_id) {
     if (png != "data:,") {
       document.getElementById("canvas-img").src = png;
     }
+    sizeText(1);
     TemplateLoadingEnd();
   }
 }

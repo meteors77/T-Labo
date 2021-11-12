@@ -4,10 +4,42 @@ footer {
 }
 nav {
   background-color: #1d1a22;
+  .navbar-toggler {
+    border: 0;
+    // メニュー展開時
+    //     &>span{
+    // &:nth-child(1){
+
+    // }
+    // }
+    &:focus {
+      // outline: none;
+      box-shadow: none;
+    }
+    // &.collapsed {
+    //   // 初期状態
+    //   border: 0;
+    //   & > span {
+    //     display: block;
+    //     background-color: white;
+    //     width: 35px;
+    //     height: 2px;
+    //     margin-bottom: 9px;
+    //     transition: transform 0.3s;
+    //     &:last-child {
+    //       margin-bottom: 0;
+    //     }
+    //   }
+    // }
+  }
+  .navbar-collapse {
+    transition: all 0.3s ease-out;
+  }
 }
 
 main {
   background-color: #edecee;
+  padding-top: 60px;
 }
 
 .dropdown-item.active,

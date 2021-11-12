@@ -42,6 +42,7 @@
 }
 
 #CS-container {
+  position: relative;
   text-align: center;
   padding: 50px 0;
   margin: 0 auto;
@@ -107,6 +108,17 @@
   width: 50px;
 }
 
+.btn-outline-dark {
+  color: #1d1a22;
+  border-color: #1d1a22;
+}
+
+.btn-outline-dark:hover {
+  color: #fff;
+  background-color: #1d1a22;
+  border-color: #1d1a22;
+}
+
 .toggle-button::after {
   display: inline-block;
   margin-left: 0.4em;
@@ -118,6 +130,32 @@
   border-left: 0.3em solid transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+#TemPre-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 3px 2px rgba(64, 56, 74, 0.29);
+          box-shadow: 0 0 3px 2px rgba(64, 56, 74, 0.29);
+}
+
+#TemPre-container .size-list {
+  display: block;
+  padding: 10px 0;
+}
+
+#TemPre-container .size-list #size-title {
+  display: inline-block;
+  font-weight: 350;
+  vertical-align: top;
+  text-align: center;
+}
+
+#TemPre-container .size-list #size-text {
+  display: inline-block;
+  padding-left: 40px;
+  font-weight: 300;
 }
 
 #canvas-container {
@@ -138,6 +176,7 @@
 }
 
 #img-container {
+  border: solid 0.1px white;
   position: relative;
   height: 0;
   overflow: hidden;
@@ -312,6 +351,9 @@
   .md-nav {
     display: inline;
   }
+  #explain {
+    font-size: 0.6em;
+  }
   #inputSelectSex {
     width: 20%;
     min-width: 80%;
@@ -327,8 +369,8 @@
     width: 30% !important;
     min-width: 30% !important;
   }
-  #explain {
-    font-size: 0.6em;
+  #TemPre-container {
+    width: 100%;
   }
 }
 
