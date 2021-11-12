@@ -49,6 +49,11 @@
   max-width: 780px;
 }
 
+#CS-container .input-group-text {
+  background-color: #e5e3e7;
+  border: 1px solid #d1ceda;
+}
+
 .row {
   margin-right: 0;
   margin-left: -16px;
@@ -66,7 +71,7 @@
   margin-top: 30px;
 }
 
-.btn-make #download {
+.btn-make .btn-right {
   margin-left: 10px;
 }
 
@@ -81,7 +86,7 @@
           flex: 1 1 auto;
   width: 1%;
   min-width: 0;
-  background-color: #fff;
+  background-color: #fff !important;
   background-clip: padding-box;
 }
 
@@ -91,7 +96,7 @@
 
 .file-label:hover {
   cursor: pointer;
-  background-color: #f3f5f7;
+  background-color: #f7f6f7 !important;
 }
 
 .status-label {
@@ -172,8 +177,12 @@
     width: 20%;
     min-width: 80%;
   }
-  .form-above {
+  .form-above,
+  .btn-above {
     margin-bottom: 10px;
+  }
+  #download {
+    margin-left: 0;
   }
   .form-status {
     width: 30% !important;

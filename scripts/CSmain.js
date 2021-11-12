@@ -117,6 +117,10 @@ function loadImage(container_id, canvas_id) {
       set1.classList.add("disabled");
       set2.classList.add("disabled");
     }
+    window.setTimeout(function () {
+      const spinner = document.getElementById("loading");
+      spinner.classList.add("loaded");
+    }, 1000);
   };
 }
 

@@ -47,16 +47,20 @@ $MarginOutline: 30px;
 }
 
 #CS-container {
-  // background-color: whitesmoke;
   // 子インライン要素を中央揃えに
   text-align: center;
   padding: 50px 0;
   margin: 0 auto;
   width: 80%;
   max-width: 780px;
+
+  .input-group-text {
+    background-color: #e5e3e7;
+    border: 1px solid rgb(209, 206, 218);
+  }
 }
 
-// フォーム部分全体の余白調整
+// フォーム部分全体の調整
 
 .row {
   margin-right: 0;
@@ -73,7 +77,7 @@ $MarginOutline: 30px;
 // ボタン余白調整
 .btn-make {
   margin-top: $MarginOutline;
-  & #download {
+  & .btn-right {
     margin-left: 10px;
   }
 }
@@ -92,12 +96,12 @@ $MarginOutline: 30px;
   flex: 1 1 auto;
   width: 1%;
   min-width: 0;
-  background-color: #fff;
+  background-color: #fff !important;
   background-clip: padding-box;
 
   &:hover {
     cursor: pointer;
-    background-color: #f3f5f7;
+    background-color: #f7f6f7 !important;
   }
 }
 
@@ -193,8 +197,12 @@ $MarginOutline: 30px;
     width: 20%;
     min-width: 80%;
   }
-  .form-above {
+  .form-above,
+  .btn-above {
     margin-bottom: $MarginInput;
+  }
+  #download {
+    margin-left: 0;
   }
   // status レスポンシブ統一
   .form-status {

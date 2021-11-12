@@ -30,12 +30,12 @@
   margin: 2rem auto;
   padding: 0.25rem;
   background-color: #fff;
-  border: 1px solid #dee2e6;
+  border: 1px solid #d6cdd6;
   border-radius: 0.4rem;
 }
 
 .contents .content-link.disabled {
-  background-color: #eaeaea;
+  background-color: #e6e5e7;
 }
 
 .contents img.thumbnail {
@@ -48,10 +48,10 @@
 }
 
 .contents .stretched-link::after {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(90, 80, 90, 0.3);
   opacity: 0;
-  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
   border-radius: 0.4rem;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
