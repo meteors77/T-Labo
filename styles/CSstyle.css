@@ -7,10 +7,10 @@
   width: 80%;
   margin: 5px !important;
   font-size: 0.8em;
-  inset: auto 3em;
-  -webkit-transform: none;
-          transform: none;
-  background-color: #40384a;
+  inset: auto 0;
+  -webkit-transform: translate(11%, 0);
+          transform: translate(11%, 0);
+  background-color: rgba(64, 56, 74, 0.95);
   -webkit-box-shadow: 0 0 8px 4px rgba(64, 56, 74, 0.23);
           box-shadow: 0 0 8px 4px rgba(64, 56, 74, 0.23);
   /* animation */
@@ -36,9 +36,9 @@
   padding: 5mm 0.8em;
   max-height: 300px;
   opacity: 1;
-  inset: auto 3em !important;
-  -webkit-transform: none !important;
-          transform: none !important;
+  inset: auto 0 !important;
+  -webkit-transform: translate(11%, 0) !important;
+          transform: translate(11%, 0) !important;
 }
 
 #tooltip {
@@ -52,6 +52,12 @@
   background-color: #afafaf;
   border-radius: 100%;
   /* * * ハテナマーク * * */
+}
+
+#tooltip:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: none !important;
 }
 
 #tooltip::before {
@@ -88,7 +94,7 @@
 
 #input .collapse.show {
   margin: 10px 5px;
-  max-height: 500px;
+  max-height: 1000px;
   opacity: 1;
 }
 
@@ -429,12 +435,16 @@
     display: inline;
   }
   #explain {
-    inset: auto -0.5em;
+    inset: auto 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
     width: 100%;
     font-size: 0.6em;
   }
   #explain.show {
-    inset: auto -0.5em !important;
+    inset: auto 0 !important;
+    -webkit-transform: translate(0) !important;
+            transform: translate(0) !important;
   }
   #inputSelectSex {
     width: 20%;
@@ -442,7 +452,7 @@
   }
   .form-above,
   .btn-above {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   #download {
     margin-left: 0;
@@ -460,6 +470,13 @@
   #inputSelectSex {
     width: 10%;
     min-width: 50%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #StatusInput .form-status {
+    width: 20% !important;
+    min-width: 20% !important;
   }
 }
 /*# sourceMappingURL=CSstyle.css.map */
