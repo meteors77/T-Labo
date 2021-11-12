@@ -46,11 +46,12 @@
     <link rel="stylesheet" href="styles/html5reset-1.6.1.css" />
     <link rel="stylesheet" href="styles/MainStyle.css" />
     <link rel="stylesheet" href="styles/CSstyle.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   </head>
 
   <body onload="loadImage('canvas-container','preview');">
     <!--  loading -->
-    <div id="loading">
+    <div id="loading" class>
       <div class="half-circle-spinner">
         <div class="lead load-text">Loading...</div>
         <div class="circle circle-1"></div>
@@ -140,7 +141,7 @@
     <main>
       <div id="CS-container">
         <!-- text input -->
-        <p>
+        <p class="lead">
           データを入力してください
           <a
             data-bs-toggle="collapse"
@@ -848,8 +849,26 @@
           </div>
         </div>
         <!-- img preview -->
-
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div id="size-title">現在サイズ</div>
+            <div id="size-text"></div>
+          </li>
+        </ul>
         <div id="img-container">
+          <div id="loading-img">
+            <div class="self-building-square-spinner">
+              <div class="square"></div>
+              <div class="square"></div>
+              <div class="square"></div>
+              <div class="square clear"></div>
+              <div class="square"></div>
+              <div class="square"></div>
+              <div class="square clear"></div>
+              <div class="square"></div>
+              <div class="square"></div>
+            </div>
+          </div>
           <img id="canvas-img" />
         </div>
         <div class="copyright">

@@ -85,6 +85,8 @@ footer a:hover {
   height: 100vh;
   -webkit-transition: opacity 1.5s, visibility 1.5s;
   transition: opacity 1.5s, visibility 1.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+          transition-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
   background-color: #edecee;
   position: fixed;
   top: 0;

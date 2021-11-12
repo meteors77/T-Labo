@@ -76,6 +76,7 @@ footer {
   width: 100vw;
   height: 100vh;
   transition: opacity 1.5s, visibility 1.5s;
+  transition-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
   background-color: #edecee;
   position: fixed;
   top: 0;

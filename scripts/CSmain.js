@@ -27,14 +27,34 @@ document.getElementById("download").onclick = (event) => {
   link.click();
 };
 
+/**
+ * 画像サイズを取得&表示するメソッド
+ * @param {int or String} flug 操作切り替え（1でcanvasから読み取る.引数がa_idの場合はそれを使う）
+ */
+function sizeText(flug) {
+  if (flug == 1) {
+    let canvas = document.getElementById("preview");
+    let text = canvas.width + "x" + canvas.width;
+    console.log(text);
+    document.getElementById("size-text").textContent = text;
+  } else {
+    let a = document.getElementById(flug);
+    let a_len = parseInt(a.getAttribute("data-value"));
+    let text = a_len + "x" + a_len;
+    console.log(text);
+    document.getElementById("size-text").textContent = text;
+  }
+}
+
 // 画像サイズを変更するメソッド
 function resizeImg(a_id) {
+  TemplateLoadingStart();
   var a = document.getElementById(a_id);
-  var lgCvs = document.getElementById("preview");
   var cvs = document.getElementById("resize");
   var ctx = cvs.getContext("2d");
   cvs.width = parseInt(a.getAttribute("data-value"));
   cvs.height = parseInt(a.getAttribute("data-value"));
+  sizeText(a_id);
 
   // 現在のcanvasから画像を生成
   // 即時関数を利用
@@ -48,6 +68,7 @@ function resizeImg(a_id) {
     ctx.drawImage(img, 0, 0, cvs.width, cvs.height);
     var imgcvs = document.getElementById("canvas-img");
     imgcvs.src = cvs.toDataURL("image/png");
+    TemplateLoadingEnd();
   };
 }
 
@@ -71,12 +92,38 @@ function createCanvas() {
   return cvs;
 }
 
+// template loading start method
+function TemplateLoadingStart() {
+  const imgload = document.getElementById("loading-img");
+  const square = document.getElementsByClassName("square");
+  imgload.style.transition = "";
+  imgload.classList.remove("imgLoaded");
+  for (let i = 0; i < square.length; i++) {
+    square[i].classList.add("animate-start");
+  }
+}
+
+// template loading finish method
+function TemplateLoadingEnd() {
+  const imgload = document.getElementById("loading-img");
+  const square = document.getElementsByClassName("square");
+  window.setTimeout(function () {
+    // load完了時だけイージング
+    imgload.style.transition = "opacity 1s, visibility 1s";
+    for (let i = 0; i < square.length; i++) {
+      square[i].classList.remove("animate-start");
+    }
+    imgload.classList.add("imgLoaded");
+  }, 1350);
+}
+
 /**
  * テンプレ画像SET & ダウンロードサイズ制限
  * @param {String} container_id canvas親要素divのid
  * @param {String} canvas_id canvasのid
  */
 function loadImage(container_id, canvas_id) {
+  TemplateLoadingStart();
   var error = document.querySelector("#canvas-img");
   var cvs = createCanvas();
   error.src = cvs.toDataURL();
@@ -117,15 +164,15 @@ function loadImage(container_id, canvas_id) {
       set1.classList.add("disabled");
       set2.classList.add("disabled");
     }
-    window.setTimeout(function () {
-      const spinner = document.getElementById("loading");
-      spinner.classList.add("loaded");
-    }, 1000);
+    sizeText(1);
+    TemplateLoadingEnd();
+    windowLoadEnd();
   };
 }
 
 // キャンバスに文字を描く
 function drawText(canvas_id) {
+  TemplateLoadingStart();
   // 引数取得
   var color = document.getElementById("ColorInput");
   var File = document.getElementById("PCsample");
@@ -154,6 +201,16 @@ function drawText(canvas_id) {
   var ctx = canvas.getContext("2d");
   const image = new Image();
   image.src = "../images/CharaSheetTemplate.png";
+
+  ctx.fillStyle = "rgb(0,0,0)";
+  // フォント読込遅れ改善
+  fillcenterText(
+    ctx,
+    "フォント読込（黑）",
+    canvas.width * 0.5,
+    canvas.width * 0.5,
+    canvas.width * 0.07
+  );
 
   // 塗りつぶし
   ctx.fillStyle = "rgb(255,255,255)";
@@ -363,6 +420,7 @@ function drawText(canvas_id) {
     if (png != "data:,") {
       document.getElementById("canvas-img").src = png;
     }
+    TemplateLoadingEnd();
   }
 }
 
