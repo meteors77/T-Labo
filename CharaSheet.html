@@ -141,38 +141,46 @@
     <main>
       <div id="CS-container">
         <!-- text input -->
-        <p class="lead">
-          データを入力してください
-          <a
-            data-bs-toggle="collapse"
-            href="#explain"
-            role="button"
-            aria-expanded="false"
-            aria-controls="explain"
-            id="tooltip"
-          ></a>
-        </p>
-        <div class="form-control collapse" id="explain">
-          <p class="text-center">
-            <span>○ データを入力して「生成！」を押すと</span
-            ><span>キャラシが下に生成されます。</span>
-          </p>
-          <p class="text-center">
-            <span>○ 「だうんろーど！」で保存できます。</span
-            ><span>2000px以上の大きさはPCのみです。</span>
-          </p>
-          <p class="text-center">
-            <span>○ フォントやらがおかしいときは</span
-            ><span>何度も「生成！」してください。</span>
-          </p>
-          <p class="text-center">
-            <span>○ PC画像は正方形にﾑﾘﾔﾘ変形されます。</span
-            ><span>トリミングできるようにしたいです</span>
-          </p>
+
+        <div class="explain">
+          <div class="lead dropdown">
+            データを入力してください
+            <a
+              href="#"
+              role="button"
+              id="tooltip"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            ></a>
+
+            <ul
+              class="dropdown-menu text-muted"
+              aria-labelladby="dropdownMenuLink"
+              id="explain"
+            >
+              <li class="text-center">
+                <span>○ データを入力して「生成！」を押すと</span
+                ><span>キャラシが下に生成されます。</span>
+              </li>
+              <li class="text-center">
+                <span>○ 「だうんろーど！」で保存できます。</span
+                ><span>2000px以上の大きさはPCのみです。</span>
+              </li>
+              <li class="text-center">
+                <span>○ フォントやらがおかしいときは</span
+                ><span>何度も「生成！」してください。</span>
+              </li>
+              <li class="text-center">
+                <span>○ PC画像は正方形にﾑﾘﾔﾘ変形されます。</span
+                ><span>トリミングできるようにしたいです</span>
+              </li>
+            </ul>
+          </div>
         </div>
+
         <div class="form-group row">
           <div class="input-box">
-            <div>
+            <div id="input">
               <!-- color & PCimage -->
               <div class="input-group">
                 <span class="input-group-text">文字色</span>
@@ -295,482 +303,486 @@
                   placeholder="なんでもご自由に！"
                 ></textarea>
               </div>
-              <div class="input-group">
+              <div class="input-group input-button">
                 <button
                   class="input-group-text toggle-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target=".status-input"
                   aria-expanded="false"
-                  aria-controls="StatusInput1 StatusInput2"
+                  aria-controls="StatusInput"
                 >
                   能力値入力欄
                 </button>
               </div>
-              <!-- STR CON POW DEX -->
-              <div class="input-group collapse status-input" id="StatusInput1">
-                <label
-                  class="input-group-text status-label"
-                  for="inputSelectSTR"
-                  >STR</label
-                >
-                <select class="form-select form-status" id="inputSelectSTR">
-                  <option value=""></option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option selected value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                </select>
-                <label
-                  class="input-group-text status-label"
-                  for="inputSelectCON"
-                  >CON</label
-                >
-                <select class="form-select form-status" id="inputSelectCON">
-                  <option value=""></option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option selected value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                </select>
-                <label
-                  class="input-group-text status-label"
-                  for="inputSelectPOW"
-                  >POW</label
-                >
-                <select class="form-select form-status" id="inputSelectPOW">
-                  <option value=""></option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option selected value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                </select>
-                <label
-                  class="input-group-text status-label"
-                  for="inputSelectDEX"
-                  >DEX</label
-                >
-                <select class="form-select form-status" id="inputSelectDEX">
-                  <option value=""></option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option selected value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                </select>
-              </div>
-              <!-- APP SIZ INT EDU -->
-              <div class="input-group collapse status-input" id="StatusInput2">
-                <label
-                  class="input-group-text status-label"
-                  for="inputSelectAPP"
-                  >APP</label
-                >
-                <select class="form-select form-status" id="inputSelectAPP">
-                  <option value=""></option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option selected value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                </select>
-                <label
-                  class="input-group-text status-label"
-                  for="inputSelectSIZ"
-                  >SIZ</label
-                >
-                <select class="form-select form-status" id="inputSelectSIZ">
-                  <option value=""></option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option selected value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                </select>
-                <label
-                  class="input-group-text status-label"
-                  for="inputSelectINT"
-                  >INT</label
-                >
-                <select class="form-select form-status" id="inputSelectINT">
-                  <option value=""></option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option selected value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                </select>
-                <label
-                  class="input-group-text status-label"
-                  for="inputSelectEDU"
-                  >EDU</label
-                >
-                <select class="form-select form-status" id="inputSelectEDU">
-                  <option value=""></option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option selected value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                </select>
+              <div class="status-input collapse input-group" id="StatusInput">
+                <!-- STR CON POW DEX -->
+                <div class="input-group input-mb">
+                  <label
+                    class="input-group-text status-label"
+                    for="inputSelectSTR"
+                    >STR</label
+                  >
+                  <select class="form-select form-status" id="inputSelectSTR">
+                    <option value=""></option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option selected value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                  </select>
+                  <label
+                    class="input-group-text status-label"
+                    for="inputSelectCON"
+                    >CON</label
+                  >
+                  <select class="form-select form-status" id="inputSelectCON">
+                    <option value=""></option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option selected value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                  </select>
+                  <label
+                    class="input-group-text status-label"
+                    for="inputSelectPOW"
+                    >POW</label
+                  >
+                  <select class="form-select form-status" id="inputSelectPOW">
+                    <option value=""></option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option selected value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                  </select>
+                  <label
+                    class="input-group-text status-label"
+                    for="inputSelectDEX"
+                    >DEX</label
+                  >
+                  <select class="form-select form-status" id="inputSelectDEX">
+                    <option value=""></option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option selected value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                  </select>
+                </div>
+                <!-- APP SIZ INT EDU -->
+                <div class="input-group input-mlr">
+                  <label
+                    class="input-group-text status-label"
+                    for="inputSelectAPP"
+                    >APP</label
+                  >
+                  <select class="form-select form-status" id="inputSelectAPP">
+                    <option value=""></option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option selected value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                  </select>
+                  <label
+                    class="input-group-text status-label"
+                    for="inputSelectSIZ"
+                    >SIZ</label
+                  >
+                  <select class="form-select form-status" id="inputSelectSIZ">
+                    <option value=""></option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option selected value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                  </select>
+                  <label
+                    class="input-group-text status-label"
+                    for="inputSelectINT"
+                    >INT</label
+                  >
+                  <select class="form-select form-status" id="inputSelectINT">
+                    <option value=""></option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option selected value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                  </select>
+                  <label
+                    class="input-group-text status-label"
+                    for="inputSelectEDU"
+                    >EDU</label
+                  >
+                  <select class="form-select form-status" id="inputSelectEDU">
+                    <option value=""></option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option selected value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                  </select>
+                </div>
               </div>
               <!-- SKILLS -->
-              <div class="input-group">
+              <div class="input-group input-button">
                 <button
                   class="input-group-text toggle-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target=".skills-input"
                   aria-expanded="false"
-                  aria-controls="SkillsInput1 SkillsInput2 SkillsInput3 SkillsInput4 SkillsInput5 SkillsInput6 SkillsInput7 SkillsInput8 SkillsInput9"
+                  aria-controls="SkillsInput"
                 >
                   技能入力欄
                 </button>
               </div>
-              <div class="input-group collapse skills-input" id="SkillsInput1">
-                <span class="input-group-text form-above">技能1</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL1"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval1"
-                >
-                  <option value="" selected></option>
-                </select>
-                <span class="input-group-text form-above">技能2</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL2"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval2"
-                >
-                  <option value="" selected></option>
-                </select>
-              </div>
-              <div class="input-group collapse skills-input" id="SkillsInput2">
-                <span class="input-group-text form-above">技能3</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL3"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval3"
-                >
-                  <option value="" selected></option>
-                </select>
-                <span class="input-group-text form-above">技能4</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL4"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval4"
-                >
-                  <option value="" selected></option>
-                </select>
-              </div>
-              <div class="input-group collapse skills-input" id="SkillsInput3">
-                <span class="input-group-text form-above">技能5</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL5"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval5"
-                >
-                  <option value="" selected></option>
-                </select>
-                <span class="input-group-text form-above">技能6</span>
-                <input
-                  type="text6"
-                  class="form-control form-status form-above"
-                  id="SKILL6"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval6"
-                >
-                  <option value="" selected></option>
-                </select>
-              </div>
-              <div class="input-group collapse skills-input" id="SkillsInput4">
-                <span class="input-group-text form-above">技能7</span>
-                <input
-                  type="text7"
-                  class="form-control form-status form-above"
-                  id="SKILL7"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval7"
-                >
-                  <option value="" selected></option>
-                </select>
-                <span class="input-group-text form-above">技能8</span>
-                <input
-                  type="text8"
-                  class="form-control form-status form-above"
-                  id="SKILL8"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval8"
-                >
-                  <option value="" selected></option>
-                </select>
-              </div>
-              <div class="input-group collapse skills-input" id="SkillsInput5">
-                <span class="input-group-text form-above">技能9</span>
-                <input
-                  type="text9"
-                  class="form-control form-status form-above"
-                  id="SKILL9"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval9"
-                >
-                  <option value="" selected></option>
-                </select>
-                <span class="input-group-text form-above">技能10</span>
-                <input
-                  type="text10"
-                  class="form-control form-status form-above"
-                  id="SKILL10"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval10"
-                >
-                  <option value="" selected></option>
-                </select>
-              </div>
-              <div class="input-group collapse skills-input" id="SkillsInput6">
-                <span class="input-group-text form-above">技能11</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL11"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval11"
-                >
-                  <option value="" selected></option>
-                </select>
-                <span class="input-group-text form-above">技能12</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL12"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval12"
-                >
-                  <option value="" selected></option>
-                </select>
-              </div>
-              <div class="input-group collapse skills-input" id="SkillsInput7">
-                <span class="input-group-text form-above">技能13</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL13"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval13"
-                >
-                  <option value="" selected></option>
-                </select>
-                <span class="input-group-text form-above">技能14</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL14"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval14"
-                >
-                  <option value="" selected></option>
-                </select>
-              </div>
-              <div class="input-group collapse skills-input" id="SkillsInput8">
-                <span class="input-group-text form-above">技能15</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL15"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval15"
-                >
-                  <option value="" selected></option>
-                </select>
-                <span class="input-group-text form-above">技能16</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL16"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval16"
-                >
-                  <option value="" selected></option>
-                </select>
-              </div>
-              <div class="input-group collapse skills-input" id="SkillsInput9">
-                <span class="input-group-text form-above">技能17</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL17"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval17"
-                >
-                  <option value="" selected></option>
-                </select>
-                <span class="input-group-text form-above">技能18</span>
-                <input
-                  type="text"
-                  class="form-control form-status form-above"
-                  id="SKILL18"
-                  placeholder="技能名"
-                />
-                <select
-                  class="form-select form-status form-above"
-                  id="SKILLval18"
-                >
-                  <option value="" selected></option>
-                </select>
+              <div class="skills-input collapse input-group" id="SkillsInput">
+                <div class="input-group input-mb">
+                  <span class="input-group-text form-above">技能1</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL1"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval1"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                  <span class="input-group-text form-above">技能2</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL2"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval2"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                </div>
+                <div class="input-group input-mb">
+                  <span class="input-group-text form-above">技能3</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL3"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval3"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                  <span class="input-group-text form-above">技能4</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL4"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval4"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                </div>
+                <div class="input-group input-mb">
+                  <span class="input-group-text form-above">技能5</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL5"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval5"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                  <span class="input-group-text form-above">技能6</span>
+                  <input
+                    type="text6"
+                    class="form-control form-status form-above"
+                    id="SKILL6"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval6"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                </div>
+                <div class="input-group input-mb">
+                  <span class="input-group-text form-above">技能7</span>
+                  <input
+                    type="text7"
+                    class="form-control form-status form-above"
+                    id="SKILL7"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval7"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                  <span class="input-group-text form-above">技能8</span>
+                  <input
+                    type="text8"
+                    class="form-control form-status form-above"
+                    id="SKILL8"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval8"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                </div>
+                <div class="input-group input-mb">
+                  <span class="input-group-text form-above">技能9</span>
+                  <input
+                    type="text9"
+                    class="form-control form-status form-above"
+                    id="SKILL9"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval9"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                  <span class="input-group-text form-above">技能10</span>
+                  <input
+                    type="text10"
+                    class="form-control form-status form-above"
+                    id="SKILL10"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval10"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                </div>
+                <div class="input-group input-mb">
+                  <span class="input-group-text form-above">技能11</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL11"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval11"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                  <span class="input-group-text form-above">技能12</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL12"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval12"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                </div>
+                <div class="input-group input-mb">
+                  <span class="input-group-text form-above">技能13</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL13"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval13"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                  <span class="input-group-text form-above">技能14</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL14"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval14"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                </div>
+                <div class="input-group input-mb">
+                  <span class="input-group-text form-above">技能15</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL15"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval15"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                  <span class="input-group-text form-above">技能16</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL16"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval16"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                </div>
+                <div class="input-group input-mlr">
+                  <span class="input-group-text form-above">技能17</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL17"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval17"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                  <span class="input-group-text form-above">技能18</span>
+                  <input
+                    type="text"
+                    class="form-control form-status form-above"
+                    id="SKILL18"
+                    placeholder="技能名"
+                  />
+                  <select
+                    class="form-select form-status form-above"
+                    id="SKILLval18"
+                  >
+                    <option value="" selected></option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="btn-make">

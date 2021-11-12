@@ -1,12 +1,25 @@
 $MarginInput: 10px;
 $MarginOutline: 30px;
 
+// navタイトル レスポンシブ対応
+// “6版クトゥルフ神話TRPG” 表示
+.md-nav {
+  display: none;
+}
+
 #explain {
-  max-width: 80%;
-  margin: $MarginOutline auto auto;
+  width: 80%;
+  margin: 5px !important;
   font-size: 0.8em;
+  inset: auto 3em;
+  transform: none;
+  background-color: #40384a;
+  box-shadow: 0 0 8px 4px rgba(64, 56, 74, 0.23);
   & span {
     display: inline-block;
+    margin: 0.2em 0;
+    color: white;
+    font-weight: 400;
   }
 
   /* animation */
@@ -24,9 +37,13 @@ $MarginOutline: 30px;
   opacity: 0;
 
   &.show {
-    padding: 0.5rem 0;
+    position: absolute;
+    margin: 5px !important;
+    padding: 5mm 0.8em;
     max-height: 300px;
     opacity: 1;
+    inset: auto 3em !important;
+    transform: none !important;
   }
 }
 
@@ -60,10 +77,36 @@ $MarginOutline: 30px;
   }
 }
 
-// navタイトル レスポンシブ対応
-// “6版クトゥルフ神話TRPG” 表示
-.md-nav {
-  display: none;
+#input {
+  .input-button {
+    margin-bottom: 0;
+  }
+  // animation
+  & .collapse {
+    -webkit-transition: all 0.5s ease !important;
+    -moz-transition: all 0.5s ease !important;
+    -ms-transition: all 0.5s ease !important;
+    -o-transition: all 0.5s ease !important;
+    transition: all 0.5s ease !important;
+
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    display: flex !important;
+    overflow: hidden;
+    opacity: 0;
+    &.show {
+      margin: $MarginInput 5px;
+      max-height: 500px;
+      opacity: 1;
+    }
+  }
+  .input-mlr {
+    margin: 0 5px;
+  }
+  .input-mb {
+    margin: 0 5px 10px;
+  }
 }
 
 #CS-container {
@@ -376,7 +419,13 @@ $MarginOutline: 30px;
   }
 
   #explain {
+    inset: auto -0.5em;
+    width: 100%;
     font-size: 0.6em;
+
+    &.show {
+      inset: auto -0.5em !important;
+    }
   }
 
   // 性別-生年月日で折り返す
