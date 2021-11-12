@@ -211,6 +211,7 @@ function drawText(canvas_id) {
     canvas.width * 0.5,
     canvas.width * 0.07
   );
+  console.log("黑");
 
   // 塗りつぶし
   ctx.fillStyle = "rgb(255,255,255)";
