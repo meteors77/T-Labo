@@ -206,12 +206,11 @@ function drawText(canvas_id) {
   // フォント読込遅れ改善
   fillcenterText(
     ctx,
-    "フォント読込（黑）",
+    "フォント読込（黑英馬歴工鍵聞歩術精析跡跳）",
     canvas.width * 0.5,
     canvas.width * 0.5,
     canvas.width * 0.07
   );
-  console.log("黑");
 
   // 塗りつぶし
   ctx.fillStyle = "rgb(255,255,255)";
@@ -378,7 +377,7 @@ function drawText(canvas_id) {
     // skills
     var skills = [];
     var skillval = [];
-    size = canvas.width * 0.027;
+    size = canvas.width * 0.026;
     for (let k = 0; k < 18; k++) {
       skills[k] = document.getElementById("SKILL" + (k + 1));
       skillval[k] = document.getElementById("SKILLval" + (k + 1));
@@ -386,12 +385,12 @@ function drawText(canvas_id) {
       let l = Math.floor(k / 6);
       let m = k - 6 * l;
       // skill name
-      x = canvas.width * 0.05 + canvas.width * 0.31 * l;
-      y = canvas.width * 0.769 + canvas.width * 0.04 * m;
+      x = canvas.width * 0.045 + canvas.width * 0.31 * l;
+      y = canvas.width * 0.768 + canvas.width * 0.04 * m;
       filltopleftText(ctx, skills[k].value, x, y, size);
 
       // skill value
-      x = canvas.width * 0.07 + canvas.width * 0.225 + canvas.width * 0.31 * l;
+      x = canvas.width * 0.2965 + canvas.width * 0.31 * l;
       fillcenterText(ctx, skillval[k].value, x, y, size);
     }
 
