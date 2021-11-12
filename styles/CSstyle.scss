@@ -8,6 +8,26 @@ $MarginOutline: 30px;
   & span {
     display: inline-block;
   }
+
+  /* animation */
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  padding: 0;
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+
+  &.show {
+    padding: 0.5rem 0;
+    max-height: 300px;
+    opacity: 1;
+  }
 }
 
 // tooltip
@@ -135,6 +155,29 @@ $MarginOutline: 30px;
   box-sizing: border-box;
 }
 
+/* size animation */
+.btn-group {
+  & .dropdown-menu {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    padding: 0;
+    max-height: 0;
+    display: block !important;
+    overflow: hidden;
+    opacity: 0;
+    &.show {
+      padding: 0.5rem 0;
+      max-height: 300px;
+      opacity: 1;
+    }
+  }
+}
+
+/* テンプレプレビュー部分 */
 #TemPre-container {
   position: relative;
   width: 80%;
@@ -223,13 +266,13 @@ $MarginOutline: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 8vw;
-    width: 8vw;
+    height: 4vw;
+    width: 4vw;
   }
 
   .self-building-square-spinner .square {
-    height: 2vw;
-    width: 2vw;
+    height: 1vw;
+    width: 1vw;
     top: calc(-2vw * 2 / 3);
     margin-right: calc(2vw / 3);
     margin-top: calc(2vw / 3);

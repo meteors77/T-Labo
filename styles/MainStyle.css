@@ -4,22 +4,50 @@ footer {
   background-color: #40384a;
 }
 
+button:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: dotted 1px;
+}
+
+.form-select:focus,
+.form-control:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: none;
+  border-color: #98929e;
+}
+
 nav {
   background-color: #1d1a22;
+  /* dropdown animation 
+  https://www.webdevqa.jp.net/ja/javascript/bootstrap%E3%83%89%E3%83%AD%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E3%81%B8%E3%81%AE%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%89%E5%8A%B9%E6%9E%9C%E3%81%AE%E8%BF%BD%E5%8A%A0/1067754357/
+  */
 }
 
 nav .navbar-toggler {
   border: 0;
 }
 
-nav .navbar-toggler:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+nav .navbar-collapse {
+  -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.34, 1.01);
+  transition: all 0.2s cubic-bezier(0, 0, 0.34, 1.01);
 }
 
-nav .navbar-collapse {
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+nav .dropdown-menu {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 0;
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+
+nav .dropdown-menu.show {
+  padding: 0.5rem 0;
+  max-height: 300px;
+  opacity: 1;
 }
 
 main {

@@ -35,7 +35,6 @@ function sizeText(flug) {
   if (flug == 1) {
     let canvas = document.getElementById("preview");
     let text = canvas.width + "x" + canvas.width;
-    console.log(text);
     document.getElementById("size-text").textContent = text;
   } else {
     let a = document.getElementById(flug);
@@ -174,6 +173,11 @@ function loadImage(container_id, canvas_id) {
       // スマホ・タブレットの場合は2000,4500のサイズを指定できない
       set1.classList.add("disabled");
       set2.classList.add("disabled");
+    } else {
+      var set1 = document.getElementById("medImg");
+      var set2 = document.getElementById("bigImg");
+      set1.classList.remove("disabled");
+      set2.classList.remove("disabled");
     }
     sizeText(1);
     TemplateLoadingEnd();
