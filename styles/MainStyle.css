@@ -40,7 +40,7 @@ nav .navbar-collapse {
   transition: all 0.2s cubic-bezier(0, 0, 0.34, 1.01);
 }
 
-nav .driodiwb-toggle:focus {
+nav .dropdown-toggle:focus {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   outline: none !important;
