@@ -16,6 +16,10 @@ button:focus {
 
 nav {
   background-color: #1d1a22;
+  box-shadow: 0 0 10px rgba(64, 56, 74, 0.5);
+  .navbar-nav {
+    margin-bottom: 0.25rem;
+  }
   .navbar-toggler {
     border: 0;
     // メニュー展開時
@@ -49,6 +53,8 @@ nav {
   https://www.webdevqa.jp.net/ja/javascript/bootstrap%E3%83%89%E3%83%AD%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E3%81%B8%E3%81%AE%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%89%E5%8A%B9%E6%9E%9C%E3%81%AE%E8%BF%BD%E5%8A%A0/1067754357/
   */
   .dropdown-menu {
+    margin: 0;
+    border: none;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;

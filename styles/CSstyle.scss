@@ -314,16 +314,16 @@ $MarginOutline: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 4vw;
-    width: 4vw;
+    height: 12%;
+    width: 12%;
   }
 
   .self-building-square-spinner .square {
-    height: 1vw;
-    width: 1vw;
-    top: calc(-2vw * 2 / 3);
-    margin-right: calc(2vw / 3);
-    margin-top: calc(2vw / 3);
+    height: 25%;
+    width: 25%;
+    top: calc(-25% * 2 / 3);
+    margin-right: calc(25% / 3);
+    margin-top: calc(25% / 3);
     background: rgba(237, 236, 238, 0.63);
     float: left;
     position: relative;
@@ -451,6 +451,15 @@ $MarginOutline: 30px;
   .form-status {
     width: 30% !important;
     min-width: 30% !important;
+  }
+
+  .input-group .radiusRight {
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+  }
+  .input-group .radiusLeft {
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
   }
 
   #TemPre-container {
