@@ -97,22 +97,24 @@ function createElementsForOptions(el, val) {
 function createDaysForOptions(el) {
   var index = el.selectedIndex;
   // 連想配列key:value
+  // key…month optionの要素番号
   const month = {
+    0: 31,
     1: 31,
-    2: 29,
-    3: 31,
-    4: 30,
-    5: 31,
-    6: 30,
-    7: 31,
+    2: 31,
+    3: 29,
+    4: 31,
+    5: 30,
+    6: 31,
+    7: 30,
     8: 31,
-    9: 30,
-    10: 31,
-    11: 30,
-    12: 31,
+    9: 31,
+    10: 30,
+    11: 31,
+    12: 30,
+    13: 31,
   };
-  // 要素がずれるので+1をする
-  return month[index - 1];
+  return month[index];
 }
 
 // 古いoption要素を削除するメソッド

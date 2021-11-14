@@ -277,7 +277,11 @@ function drawText(canvas_id) {
     fillcenterText(ctx, Lread.value + "      " + Fread.value, x, y, size);
 
     // sex
-    size = canvas.width * 0.045;
+    if (Sex.value == "??") {
+      size = canvas.width * 0.044;
+    } else {
+      size = canvas.width * 0.045;
+    }
     x = canvas.width * 0.683;
     y = canvas.width * 0.0875;
     fillcenterText(ctx, Sex.value, x, y, size);
@@ -293,6 +297,38 @@ function drawText(canvas_id) {
     x = canvas.width * 0.885;
     y = canvas.width * 0.07;
     if (Year.value == "  " && Month.value == "  " && Day.value == "  ") {
+    } else if (
+      (Year.value == "??" || Year.value == "  ") &&
+      (Month.value == "??" || Month.value == "  ") &&
+      (Day.value == "??" || Day.value == "  ")
+    ) {
+      size = canvas.width * 0.045;
+      y = canvas.width * 0.087;
+      fillcenterText(ctx, "???", x, y, size);
+    } else if (Month.value == "??" && Day.value == "??") {
+      fillcenterText(
+        ctx,
+        Year.value + "/     \n       " + Month.value,
+        x,
+        y,
+        size
+      );
+    } else if (Year.value == "  " && Month.value == "  ") {
+      size = canvas.width * 0.035;
+      y = canvas.width * 0.084;
+      fillcenterText(ctx, Day.value + "日", x, y, size);
+    } else if (Day.value == "  " && Month.value == "  ") {
+      size = canvas.width * 0.035;
+      y = canvas.width * 0.084;
+      fillcenterText(ctx, Year.value + "年", x, y, size);
+    } else if (Year.value == "  ") {
+      size = canvas.width * 0.035;
+      y = canvas.width * 0.084;
+      fillcenterText(ctx, Month.value + "/" + Day.value, x, y, size);
+    } else if (Day.value == "  ") {
+      size = canvas.width * 0.03;
+      y = canvas.width * 0.084;
+      fillcenterText(ctx, Year.value + "/" + Month.value, x, y, size);
     } else {
       fillcenterText(
         ctx,

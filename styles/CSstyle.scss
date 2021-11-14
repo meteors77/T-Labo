@@ -120,7 +120,7 @@ $MarginOutline: 30px;
   text-align: center;
   padding: 50px 0;
   margin: 0 auto;
-  width: 80%;
+  width: 70%;
   max-width: 780px;
 
   .input-group-text {
@@ -135,7 +135,7 @@ $MarginOutline: 30px;
   margin-right: 0;
   margin-left: -16px;
   & .input-box {
-    margin: $MarginOutline 5px;
+    margin: 30px 5px calc(30px - 1rem);
 
     & .input-group {
       margin: $MarginInput 5px;
@@ -423,6 +423,10 @@ $MarginOutline: 30px;
     display: inline;
   }
 
+  #CS-container {
+    width: 80%;
+  }
+
   #explain {
     inset: auto 0;
     transform: translate(0);
@@ -442,7 +446,7 @@ $MarginOutline: 30px;
   }
   .form-above,
   .btn-above {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   #download {
     margin-left: 0;

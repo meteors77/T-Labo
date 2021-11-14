@@ -354,11 +354,14 @@
                 <!-- STR CON POW DEX -->
                 <div class="input-group input-mb">
                   <label
-                    class="input-group-text status-label"
+                    class="input-group-text status-label form-above"
                     for="inputSelectSTR"
                     >STR</label
                   >
-                  <select class="form-select form-status" id="inputSelectSTR">
+                  <select
+                    class="form-select form-status form-above"
+                    id="inputSelectSTR"
+                  >
                     <option value=""></option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -379,12 +382,12 @@
                     <option value="18">18</option>
                   </select>
                   <label
-                    class="input-group-text status-label"
+                    class="input-group-text status-label form-above"
                     for="inputSelectCON"
                     >CON</label
                   >
                   <select
-                    class="form-select form-status radiusRight"
+                    class="form-select form-status radiusRight form-above"
                     id="inputSelectCON"
                   >
                     <option value=""></option>
@@ -460,11 +463,14 @@
                 <!-- APP SIZ INT EDU -->
                 <div class="input-group input-mlr">
                   <label
-                    class="input-group-text status-label"
+                    class="input-group-text status-label form-above"
                     for="inputSelectAPP"
                     >APP</label
                   >
-                  <select class="form-select form-status" id="inputSelectAPP">
+                  <select
+                    class="form-select form-status form-above"
+                    id="inputSelectAPP"
+                  >
                     <option value=""></option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -485,12 +491,12 @@
                     <option value="18">18</option>
                   </select>
                   <label
-                    class="input-group-text status-label"
+                    class="input-group-text status-label form-above"
                     for="inputSelectSIZ"
                     >SIZ</label
                   >
                   <select
-                    class="form-select form-status radiusRight"
+                    class="form-select form-status radiusRight form-above"
                     id="inputSelectSIZ"
                   >
                     <option value=""></option>
@@ -648,32 +654,27 @@
                   </select>
                 </div>
                 <div class="input-group input-mb">
-                  <span class="input-group-text">技能7</span>
+                  <span class="input-group-text form-above">技能7</span>
                   <input
                     type="text7"
-                    class="form-control form-status"
+                    class="form-control form-status form-above"
                     id="SKILL7"
                     placeholder="技能名"
                   />
                   <select
-                    class="form-select form-status radiusRight"
+                    class="form-select form-status form-above radiusRight"
                     id="SKILLval7"
                   >
                     <option value="" selected></option>
                   </select>
-                  <span class="input-group-text form-above radiusLeft"
-                    >技能8</span
-                  >
+                  <span class="input-group-text radiusLeft">技能8</span>
                   <input
                     type="text8"
-                    class="form-control form-status form-above"
+                    class="form-control form-status"
                     id="SKILL8"
                     placeholder="技能名"
                   />
-                  <select
-                    class="form-select form-status form-above"
-                    id="SKILLval8"
-                  >
+                  <select class="form-select form-status" id="SKILLval8">
                     <option value="" selected></option>
                   </select>
                 </div>
@@ -878,6 +879,9 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="counter" style="font-size: 80%; margin-bottom: 1rem">
+          <!-- <small>累計ダウンロード数：---</small> -->
         </div>
         <!-- img preview -->
         <div id="TemPre-container">

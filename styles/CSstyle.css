@@ -111,7 +111,7 @@
   text-align: center;
   padding: 50px 0;
   margin: 0 auto;
-  width: 80%;
+  width: 70%;
   max-width: 780px;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .row .input-box {
-  margin: 30px 5px;
+  margin: 30px 5px calc(30px - 1rem);
 }
 
 .row .input-box .input-group {
@@ -434,6 +434,9 @@
   .md-nav {
     display: inline;
   }
+  #CS-container {
+    width: 80%;
+  }
   #explain {
     inset: auto 0;
     -webkit-transform: translate(0);
@@ -452,7 +455,7 @@
   }
   .form-above,
   .btn-above {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   #download {
     margin-left: 0;
